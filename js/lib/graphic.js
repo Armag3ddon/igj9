@@ -2,10 +2,14 @@ var g = {
 	urls: [
 		'img/MenuBack.jpg',
 		'img/CityBack.jpg',
+		'img/CreditsBack.jpg',
 		'img/StartButton.png',
 		'img/StartButtonHL.png',
 		'img/CreditsButton.png',
-		'img/CreditsButtonHL.png'
+		'img/CreditsButtonHL.png',
+		'img/BackButton.png',
+		'img/BackButtonHL.png',
+		'img/LogButton.png'
 	],
 
 	add: function( url ) {
