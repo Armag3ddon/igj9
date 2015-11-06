@@ -1,5 +1,11 @@
 var g = {
 	urls: [
+		'img/MenuBack.jpg',
+		'img/CityBack.jpg',
+		'img/StartButton.png',
+		'img/StartButtonHL.png',
+		'img/CreditsButton.png',
+		'img/CreditsButtonHL.png'
 	],
 
 	add: function( url ) {
