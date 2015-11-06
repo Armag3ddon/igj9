@@ -13,6 +13,10 @@ var g = {
 		'img/InventoryBack.png',
 		'img/Player.png',
 		'img/TiledBack.jpg'
+		'img/districts/District1.png',
+		'img/districts/District2.png',
+		'img/districts/District3.png',
+		'img/districts/District4.png'
 	],
 
 	add: function( url ) {
