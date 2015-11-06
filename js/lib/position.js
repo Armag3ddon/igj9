@@ -1,20 +1,20 @@
 function Position(x, y) {
-	setX(x);
-	setY(y);
+	this.setX(x);
+	this.setY(y);
 }
 
-Position.prototype.setX(x) {
+Position.prototype.setX = function(x) {
 	this.x = x;
 }
 
-Position.prototype.getX() {
+Position.prototype.getX = function() {
 	return this.x;
 }
 
-Position.prototype.setY(y) {
+Position.prototype.setY = function(y) {
 	this.y = y;
 }
 
-Position.prototype.getY() {
+Position.prototype.getY = function() {
 	return this.y;
 }
