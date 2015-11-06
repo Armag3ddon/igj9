@@ -1,30 +1,19 @@
-function Player(position) {
-	this.setPosition(position);
+function Player(position, sprite) {
+	this.position = position;
+	this.vector = new V2(0, 0);
+	this.sprite = sprite;
 }
 
 Player.prototype.draw = function ( ctx ) {
-	
+	// draw char sprite
+	ctx.drawImage(this.sprite, this.position.x, this.position.y);
 }
 
 Player.prototype.update = function ( delta ) {
-	// set new position
-	var newPositionX = this.getPosition().getX() + this.getVector().getX();
-	var newPositionY = this.getPosition().getY() + this.getVector().getY();
-	this.setPosition(new Position(newPositionX, newPositionY);
+	// update position
+	var newPositionX = this.position.x + this.vector.x;
+	var newPositionY = this.position.y + this.vector.y;
+	this.position = new V2(newPositionX, newPositionY);
 }
 
-Player.prototype.setPosition(position) {
-	this.position = position;
-}
-
-Player.prototype.getPosition() {
-	return this.position;
-}
-
-Player.prototype.setVector(vector) {
-	this.vector = vector;
-}
-
-Player.prototype.getVector() {
-	return this.vector;
-}
+Player.prototype.position = new V2();
