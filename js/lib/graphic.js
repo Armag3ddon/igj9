@@ -11,10 +11,11 @@ var g = {
 		'img/BackButtonHL.png',
 		'img/LogButton.png',
 		'img/InventoryBack.png',
-		'img/districts/District1.png',
-		'img/districts/District2.png',
-		'img/districts/District3.png',
-		'img/districts/District4.png'
+		'img/Districts/District1.png',
+		'img/Districts/District2.png',
+		'img/Districts/District3.png',
+		'img/Districts/District4.png',
+		'img/sprite_sheet_props.png'
 	],
 
 	add: function( url ) {
