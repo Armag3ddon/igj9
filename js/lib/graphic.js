@@ -10,7 +10,9 @@ var g = {
 		'img/BackButton.png',
 		'img/BackButtonHL.png',
 		'img/LogButton.png',
-		'img/InventoryBack.png'
+		'img/InventoryBack.png',
+		'img/Player.png',
+		'img/TiledBack.jpg'
 	],
 
 	add: function( url ) {

@@ -1,12 +1,12 @@
-function Player(position, sprite) {
+function Player(position) {
 	this.position = position;
 	this.vector = new V2(0, 0);
-	this.sprite = sprite;
+	this.sprite = new Sprite('img/Player.png');
 }
 
 Player.prototype.draw = function ( ctx ) {
 	// draw char sprite
-	ctx.drawImage(this.sprite, this.position.x, this.position.y);
+	this.sprite.draw(ctx, this.position.x, this.position.y);
 }
 
 Player.prototype.update = function ( delta ) {

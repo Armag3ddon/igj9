@@ -1,8 +1,19 @@
 function PlayerScene() {
-	this.bg = new Sprite('img/MenuBack.jpg');
-	this.playerSprite = new Sprite('img/Player.png');
-
-	this.entities = [ new Player(new V2(0, 0), this.playerSprite)
+	// background
+	this.bg = new Sprite('img/TiledBack.jpg');
+	
+	// tile data
+	this.tileSizeX = 36;
+	this.tileSizeY = 24;
+	this.tileAmountX = 30;
+	this.tileAmountY = 25;
+	
+	// player object
+	var playerStartPosition = new V2(50, 50);
+	this.player = new Player(playerStartPosition);
+	
+	this.entities = [ this.bg,
+						this.player
 					 ];
 };
 

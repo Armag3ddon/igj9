@@ -1,7 +1,10 @@
 function MenuScene() {
 	this.bg = new Sprite('img/MenuBack.jpg');
 
-	this.entities = [ new Button('img/StartButton.png', 'img/StartButtonHL.png', 1280/2 - 125/2, 500, function() {
+	this.entities = [ new Button('img/CreditsButton.png', 'img/CreditsButtonHL.png', 1280/2 - 125/2, 400, function() {
+						  game.scene = new PlayerScene;
+					  }, ''),
+					  new Button('img/StartButton.png', 'img/StartButtonHL.png', 1280/2 - 125/2, 500, function() {
 						  game.scene = new CityScene;
 					  }, ''),
 					  new Button('img/CreditsButton.png', 'img/CreditsButtonHL.png', 1280/2 - 125/2, 600, function() {
