@@ -81,11 +81,4 @@ var game = {
 		this.displayCtx.fillText( this.fps, 1200, 50 );
 	},
 
-	nextLevel: function() {
-		this.level++;
-		if( levels['level' + this.level].dialog )
-			this.scene = new PreUniverseScene(levels['level' + this.level]);
-		else
-			this.scene = new UniverseScene(levels['level' + this.level]);
-	}
 }

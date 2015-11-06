@@ -1,6 +1,5 @@
 var g = {
 	urls: [
-		''
 	],
 
 	add: function( url ) {
