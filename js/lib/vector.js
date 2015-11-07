@@ -3,6 +3,28 @@ function V2( x, y ) {
 	this.y = y;
 }
 
+V2.LEFT = new V2(-1, 0);
+V2.RIGHT = new V2(1, 0);
+V2.UP = new V2(0, -1);
+V2.DOWN = new V2(0, 1);
+V2.EMPTY = new V2(0, 0);
+
+V2.prototype.isEmpty = function() {
+	if (this == V2.EMPTY) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+V2.prototype.equals = function(vector) {
+	if (this.x == vector.x && this.y == vector.y) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
 V2.prototype.sum = function( v ) { return new V2( this.x+v.x, this.y+v.y ); }
 V2.prototype.add = function( v ) { this.x += v.x; this.y += v.y; return this; }
 
