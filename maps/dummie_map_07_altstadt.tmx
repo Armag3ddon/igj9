@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="25" tilewidth="36" tileheight="28" nextobjectid="1">
- <tileset firstgid="1" name="sprite_sheet_props" tilewidth="36" tileheight="28" tilecount="2500">
+ <tileset firstgid="1" name="sprite_sheet_props" tilewidth="36" tileheight="28">
   <image source="../img/sprite_sheet_props.png" width="1800" height="1400"/>
  </tileset>
- <layer name="Kachelebene 1" width="30" height="25">
+ <layer name="map" width="30" height="25">
   <data encoding="base64" compression="zlib">
    eJztlU0KgCAQRrXz6KILuelCedtoFUHG8OHkQP5GwgMdBx+OinZSyhIcwUTGAQv4iwUIccxHXIJcXlzXCxnFa4BWXqmnFy9XJ86bi7feFejdu2l1t7Nf00updb4cvXsxLzdP3rkQJb2xPUq9Ler89fuM750jtqYkX/rv59jj7017dx0n5HNxOjeS9wBOOXE+
+  </data>
+ </layer>
+ <layer name="walkable" width="30" height="25" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYKQCJgSoYQct7CUWjNpLXfVD3V5qAUrtpVf8jnR7R8EoGAVDB1DSfqBme4MaYNRewvYSii987qRm+4pe9gIAA8sAvw==
   </data>
  </layer>
 </map>
