@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="25" tilewidth="36" tileheight="28" nextobjectid="1">
+ <tileset firstgid="1" name="sprite_sheet_props" tilewidth="36" tileheight="28" tilecount="2500">
+  <image source="../img/sprite_sheet_props.png" width="1800" height="1400"/>
+ </tileset>
+ <layer name="Kachelebene 1" width="30" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzTZWJg0B1BOG4Uj2Ia4ImjeNhjfTQ8ku1FlyPkLlLV4zPHngGBibGXFPXUcj+1/DuKiY8bYsXpae8kGmCY+cSKjwQ80O1KemMAqd1N9g==
+  </data>
+ </layer>
+</map>
