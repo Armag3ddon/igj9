@@ -18,13 +18,19 @@ function MapScene( definition ) {
 	this.mapSizeY = this.definition.tileheight * this.definition.layers[0].height;
 	this.buffer.width = this.mapSizeX;
 	this.buffer.height = this.mapSizeY;
+	this.mapWidth = this.definition.layers[0].width;
+	this.mapHeight = this.definition.layers[0].height;
 
-	this.cameraThresholdX = 320;
-	this.cameraThresholdY = 180;
+	this.cameraThresholdX = 160;
+	this.cameraThresholdY = 90;
 
 	this.calcMapOffset();
 
 	this.renderMap();
+
+	this.initPathfinding();
+
+	this.createNPCs();
 };
 
 MapScene.prototype = new Scene;
@@ -92,14 +98,14 @@ MapScene.prototype.calcMapOffset = function() {
 MapScene.prototype.setFineOffset = function(x, y) {
 	this.mapFineOffset.x = x;
 	this.mapFineOffset.y = y;
-}
+};
 
 MapScene.prototype.getTilePos = function(x, y) {
 	var wdt = this.definition.tilewidth;
 	var hgt = this.definition.tileheight;
 
 	return { x: x*wdt + this.mapOffset.x - this.mapFineOffset.x, y: y*hgt + this.mapOffset.y - this.mapFineOffset.y };
-}
+};
 
 MapScene.prototype.down = function ( key ) {
 	switch( key ) {
@@ -107,7 +113,7 @@ MapScene.prototype.down = function ( key ) {
 			this.player.startMove(key);
 			break;
 	}
-}
+};
 
 MapScene.prototype.up = function ( key ) {
 	switch( key ) {
@@ -115,11 +121,11 @@ MapScene.prototype.up = function ( key ) {
 			this.player.stopMove(key);
 			break;
 	}
-}
+};
 
 MapScene.prototype.getTileSize = function() {
 	return { wdt: this.definition.tilewidth, hgt: this.definition.tileheight };
-}
+};
 
 MapScene.prototype.isWalkableTile = function(x, y) {
 	if (x < 0) return false;
@@ -130,4 +136,25 @@ MapScene.prototype.isWalkableTile = function(x, y) {
 	if (pos >= this.definition.layers[1].data.length) return false;
 
 	return !this.definition.layers[1].data[pos];
-}
+};
+
+MapScene.prototype.initPathfinding = function() {
+	this.mapgrid = new Array(this.definition.layers[1].width);
+	var rowlength = this.definition.layers[1].height;
+	for (var i = 0; i < this.mapgrid.length; i++) {
+		this.mapgrid[i] = this.definition.layers[1].data.slice(i * rowlength, i * rowlength + rowlength);
+	}
+};
+
+MapScene.prototype.createNPCs = function() {
+	this.npcSprites = [];
+	this.npcSprites.push(new Sprite('img/character_black_yellow_blue.png'));
+	this.npcSprites.push(new Sprite('img/character_blonde_red_black.png'));
+	this.npcSprites.push(new Sprite('img/character_brown_blue_brown.png'));
+	this.npcSprites.push(new Sprite('img/character_hat_black_beige.png'));
+
+	for (var i = 0; i < 50; i++) {
+		var npc = new NPC(10,10, this.npcSprites[0]);
+		this.entities.push(npc);
+	}
+};

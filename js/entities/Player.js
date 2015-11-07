@@ -16,7 +16,7 @@ function Player(posX, posY) {
 	this.sprite = new Sprite('img/character_black_yellow_blue.png');
 
 	// speed in pixels / second
-	this.tilesPerSecond = 8;
+	this.tilesPerSecond = 6;
 
 	this.moveLeft = false;
 	this.moveRight = false;
@@ -31,12 +31,12 @@ Player.prototype.draw = function ( ctx ) {
 	var y = tilepos.y + this.finePosY;
 
 	var gX = Math.floor(this.walkAnimationStep / (this.walkAnimationDuration / this.walkAnimationFrames)) * this.sizeX;
-	var gY = 0;
+	var gY = this.sizeY * 2;
 
 	if (this.moveRight && !this.isMovingY())
 		gY = this.sizeY;
-	if (this.moveDown)
-		gY = this.sizeY * 2;
+	if (this.moveUp)
+		gY = 0;
 	if (this.moveLeft && !this.isMovingY())
 		gY = this.sizeY * 3;
 
