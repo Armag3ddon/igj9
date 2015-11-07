@@ -1,5 +1,5 @@
 function MenuScene() {
-	this.bg = new Sprite('img/MenuBack.jpg');
+	this.bg = new Sprite('img/main_screen.jpg');
 
 	this.entities = [ new Button('img/CreditsButton.png', 'img/CreditsButtonHL.png', 1280/2 - 125/2, 400, function() {
 						  game.scene = new PlayerScene;

@@ -3,10 +3,10 @@ var g = {
 		'img/MenuBack.jpg',
 		'img/CityBack.jpg',
 		'img/CreditsBack.jpg',
-		'img/StartButton.png',
-		'img/StartButtonHL.png',
-		'img/CreditsButton.png',
-		'img/CreditsButtonHL.png',
+		'img/button_start.png',
+		'img/button_start_hover.png',
+		'img/button_credits.png',
+		'img/button_credits_hover.png',
 		'img/BackButton.png',
 		'img/BackButtonHL.png',
 		'img/LogButton.png',
@@ -22,7 +22,10 @@ var g = {
 		'img/character_black_yellow_blue.png',
 		'img/character_blonde_red_black.png',
 		'img/character_brown_blue_brown.png',
-		'img/character_hat_black_beige.png'
+		'img/character_hat_black_beige.png',
+		'img/game_over.jpg',
+		'img/main_screen.jpg',
+
 	],
 
 	add: function( url ) {
