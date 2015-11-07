@@ -9,6 +9,7 @@ function District( definition, entities ) {
 	this.definition = definition;
 
 	this.areaInfo = false;
+	this.entDis = 6; //6 == districtInfo
 
 	this.icon = {
 		X: definition.iconX,
@@ -19,7 +20,7 @@ function District( definition, entities ) {
 }
 
 District.prototype.draw = function ( ctx ) {
-	if(this.entities[7].show == false) {
+	if(this.entities[this.entDis].show == false) {
 		this.areaInfo = false;
 	}	
 
@@ -64,9 +65,9 @@ District.prototype.draw = function ( ctx ) {
 District.prototype.click = function ( pos ) {
 	if( this.area.inside( pos )) {
 		this.areaInfo = true;
-		this.entities[7].show = true; //7 == districtInfo
-		this.entities[7].info = "Keine Informationen zu diesem Stadtteil vorhanden.";
-		this.entities[7].level = level1;
+		this.entities[this.entDis].show = true;
+		this.entities[this.entDis].info = "Keine Informationen zu diesem Stadtteil vorhanden.";
+		this.entities[this.entDis].level = level1;
 	}
 
 }

@@ -11,7 +11,7 @@ function CityScene() {
 	for (var i = 1; i <= city.districtCount; i++)
 		this.entities.push( new District( city['district' + i], this.entities ) );
 
-	this.entities.push( new Inventory );
+	//this.entities.push( new Inventory );
 	this.entities.push( new LogButton );
 
 	this.entities.push( new districtInfo );
