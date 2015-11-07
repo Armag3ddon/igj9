@@ -67,7 +67,7 @@ District.prototype.click = function ( pos ) {
 		this.areaInfo = true;
 		this.entities[this.entDis].show = true;
 		this.entities[this.entDis].info = this.definition.districtInfo;
-		this.entities[this.entDis].level = this.definition.map;
+		this.entities[this.entDis].level = level1;//this.definition.map;
 	}
 
 }
