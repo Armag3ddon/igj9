@@ -1,43 +1,39 @@
 var city = {
 	districtCount: 4,
 	district1: {
-		posX: 508,
-		posY: 103,
-		background: 'District1.png',
+		posX: 400,
+		posY: 68,
+		background: 'district1.png',
 		iconX: 0,
 		iconY: 235,
 		iconWidth: 55,
-		iconHeight: 92,
-		districtInfo: "Gruen wie das Gras."
+		iconHeight: 92
 	},
 	district2: {
-		posX: 284,
-		posY: 287,
-		background: 'District2.png',
+		posX: 173,
+		posY: 88,
+		background: 'district2.png',
 		iconX: 55,
 		iconY: 235,
 		iconWidth: 55,
-		iconHeight: 92,
-		districtInfo: "Rot wie Kultistenblut"
+		iconHeight: 92
 	},
 	district3: {
-		posX: 388,
-		posY: 44,
-		background: 'District3.png',
+		posX: 252,
+		posY: 238,
+		background: 'district3.png',
 		iconX: 110,
 		iconY: 235,
 		iconWidth: 55,
-		iconHeight: 92,
-		districtInfo: "Lila oder doch Purple?"
+		iconHeight: 92
 	},
 	district4: {
-		posX: 231,
-		posY: 136,
-		background: 'District4.png',
+		posX: 474,
+		posY: 140,
+		background: 'district4.png',
 		iconX: 165,
 		iconY: 235,
 		iconWidth: 55,
-		iconHeight: 92,
-		districtInfo: "Blau wie Thomas Pulli."
+		iconHeight: 92
 	}
 };

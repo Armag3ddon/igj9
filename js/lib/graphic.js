@@ -13,17 +13,18 @@ var g = {
 		'img/InventoryBack.png',
 		'img/Player.png',
 		'img/TiledBack.jpg',
-		'img/Districts/District1.png',
-		'img/Districts/District2.png',
-		'img/Districts/District3.png',
-		'img/Districts/District4.png',
+		'img/Districts/district1.png',
+		'img/Districts/district2.png',
+		'img/Districts/district3.png',
+		'img/Districts/district4.png',
 		'img/sprite_sheet_props.png',
 		'img/character_black_yellow_blue.png',
 		'img/character_blonde_red_black.png',
 		'img/character_brown_blue_brown.png',
 		'img/character_hat_black_beige.png',
 		'img/game_over.jpg',
-		'img/main_screen.jpg'
+		'img/main_screen.jpg',
+		'img/map_screen.jpg'
 
 	],
 

@@ -24,52 +24,39 @@ District.prototype.draw = function ( ctx ) {
 		this.areaInfo = false;
 	}	
 
-	this.img.draw(ctx, this.posX, this.posY);
-
 	var offsetX = this.posX + this.img.width/2 - this.icon.Wdt/2;
 	var offsetY = this.posY + this.img.height/2 - this.icon.Hgt/2;
 
 	if(this.area.inside(mouse)) {
 		var iconArea = new Rect( new V2( offsetX , offsetY ), new V2( offsetX+this.icon.Wdt, offsetY+this.icon.Hgt ));
-		
-		if(iconArea.inside(mouse)){
-			game.scene.districtSprite.area(ctx, this.icon.X, this.icon.Y, this.icon.Wdt, this.icon.Hgt, offsetX, offsetY);
-
-			if(!this.areaInfo){
-				ctx.beginPath();
-				ctx.rect(400, 500, 400 , 60);
-				ctx.fillStyle = 'white';
-				ctx.fill();
-				ctx.lineWidth = 1;
-				ctx.strokeStyle = 'black';
-				ctx.stroke();
-			}
-		} else {
-			game.scene.districtSprite.area(ctx, this.icon.X, this.icon.Y, this.icon.Wdt, this.icon.Hgt, offsetX, offsetY);
-
-			if(!this.areaInfo) {
-				ctx.beginPath();
-				ctx.rect(400, 300, 400 , 350);
-				ctx.fillStyle = 'white';
-				ctx.fill();
-				ctx.lineWidth = 1;
-				ctx.strokeStyle = 'black';
-				ctx.stroke();
-			}			
-		}
-	} else {
-		game.scene.districtSprite.area(ctx, this.icon.X, this.icon.Y, this.icon.Wdt, this.icon.Hgt, offsetX, offsetY);
-	}
+		this.img.draw(ctx, this.posX, this.posY);
+	} 
 }
 
 District.prototype.click = function ( pos ) {
 	if( this.area.inside( pos )) {
 		this.areaInfo = true;
-		this.entities[this.entDis].show = true;
-		this.entities[this.entDis].info = this.definition.districtInfo;
-		this.entities[this.entDis].level = level1;//this.definition.map;
+		//this.entities[this.entDis].show = true;
+		//this.entities[this.entDis].level = level1;//this.definition.map;
+	
+		switch(this.definition.background) {
+			case 'district1.png':
+				game.scene = new MapScene(level1);
+				break;
+			case 'district2.png':
+				game.scene = new MapScene(level1);
+				break;
+			case 'district3.png':
+				game.scene = new MapScene(level1);
+				break;
+			case 'district4.png':
+				game.scene = new MapScene(level1);
+				break;
+			default:
+				
+				break;
+		}
 	}
-
 }
 
 District.prototype.update = function ( delta ) {

@@ -19,7 +19,7 @@ LogButton.prototype.close = function() {
 }
 
 LogButton.prototype.draw = function( ctx ) {
-	this.img.draw(ctx, this.x, this.y);
+	//this.img.draw(ctx, this.x, this.y);
 
 	if (this.opened)
 	{
