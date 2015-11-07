@@ -44,7 +44,7 @@ District.prototype.click = function ( pos ) {
 				game.scene = new MapScene(level1);
 				break;
 			case 'district2.png':
-				game.scene = new MapScene(level1);
+				game.scene = new MapScene(level2);
 				break;
 			case 'district3.png':
 				game.scene = new MapScene(level1);
