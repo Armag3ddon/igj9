@@ -18,10 +18,14 @@ function PlayerScene() {
 		tileAmountY: this.tileAmountY
 	}
 	this.player = new Player(playerStartPosition, mapInfo);
-	
-	this.entities = [ this.bg,
+
+	this.entities = [
 						this.player
 					 ];
 };
 
 PlayerScene.prototype = new Scene;
+
+PlayerScene.prototype.down = function( key ) {
+	console.log("down");
+};

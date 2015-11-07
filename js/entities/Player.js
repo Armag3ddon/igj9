@@ -3,7 +3,7 @@ function Player(position, mapInfo) {
 	this.mapInfo = mapInfo;
 	
 	this.updateVector(V2.EMPTY);	// simulated user input for testing
-	this.sprite = new Sprite('img/character_black_yellow_blue.png.png');
+	this.sprite = new Sprite('img/character_black_yellow_blue.png');
 	
 	// speed in pixels / second
 	this.tilesPerSecond = 2;
@@ -38,7 +38,7 @@ Player.prototype.updatePosition = function(newPosition) {
 	this.position = newPosition;
 	
 	if (this.position.equals(this.positionFin)) {
-		console.log("position changed to: " + this.position.x + "/" + this.position.y);
+//		console.log("position changed to: " + this.position.x + "/" + this.position.y);
 	}
 	
 	// check if step is fully done
