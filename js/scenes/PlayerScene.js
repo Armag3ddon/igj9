@@ -9,7 +9,8 @@ function PlayerScene() {
 	this.tileAmountY = 25;
 	
 	// player object
-	var playerStartPosition = new V2(parseInt(this.tileAmountX / 2) * this.tileSizeX, parseInt(this.tileAmountY / 2) * this.tileSizeY);
+	//var playerStartPosition = new V2(parseInt(this.tileAmountX / 2) * this.tileSizeX, parseInt(this.tileAmountY / 2) * this.tileSizeY);	// centered
+	var playerStartPosition = new V2(0 * this.tileSizeX, 0 * this.tileSizeY);
 	var mapInfo = {
 		tileSizeX: this.tileSizeX,
 		tileSizeY: this.tileSizeY,
