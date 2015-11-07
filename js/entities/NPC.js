@@ -14,7 +14,7 @@ function NPC(posX, posY, sprite) {
 	this.sprite = sprite;
 
 	// speed in pixels / second
-	this.tilesPerSecond = 8;
+	this.tilesPerSecond = 2;
 
 	this.moveTarget = new V2(0,0);
 	this.moving = false;
@@ -45,6 +45,8 @@ NPC.prototype.draw = function ( ctx ) {
 
 	// draw char sprite
 	this.sprite.area(ctx, gX,gY, 36,72, x-18,y-65);
+	ctx.fillStyle = '#000000';
+	ctx.strokeRect(x,y, 20,20);
 };
 
 NPC.prototype.update = function ( delta ) {
@@ -78,13 +80,13 @@ NPC.prototype.update = function ( delta ) {
 		var newX = this.finePosX;
 		var newY = this.finePosY;
 
-		this.calcPosition(newX, newY, speedX, speedY, tilesize);
+		this.calcPosition(newX, newY, speedX, speedY, tilesize, delta);
 	} else {
 		this.getMoveTarget();
 	}
 };
 
-NPC.prototype.calcPosition = function(newX, newY, speedX, speedY, tilesize) {
+NPC.prototype.calcPosition = function(newX, newY, speedX, speedY, tilesize, delta) {
 	if (this.moveLeft)
 		newX -= speedX;
 	if (this.moveRight)
@@ -125,6 +127,13 @@ NPC.prototype.calcPosition = function(newX, newY, speedX, speedY, tilesize) {
 		}
 	}
 
+	if (newX != this.finePosX || newY != this.finePosY)
+	{
+		this.walkAnimationStep += delta;
+		if (this.walkAnimationStep > this.walkAnimationDuration)
+			this.walkAnimationStep -= this.walkAnimationDuration;
+	}
+
 	this.finePosX = newX;
 	this.finePosY = newY;
 };
@@ -152,8 +161,8 @@ NPC.prototype.getMoveTarget = function() {
 	var tY = 0;
 	var found = false;
 	for (var i = 0; i < 5; i++) {
-		tX = Math.round(Math.random() * game.scene.mapWidth);
-		tY = Math.round(Math.random() * game.scene.mapHeight);
+		tX = Math.floor(Math.random() * game.scene.mapWidth);
+		tY = Math.floor(Math.random() * game.scene.mapHeight);
 		if (game.scene.isWalkableTile(tX, tY)) {
 			found = true;
 			break;

@@ -65,7 +65,7 @@ Player.prototype.update = function ( delta ) {
 			newX += speedX / 1.5;
 		else
 			newX += speedX;
-	}
+	}8
 	if (this.moveUp)
 	{
 		if (this.isMovingX())

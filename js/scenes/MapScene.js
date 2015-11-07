@@ -140,9 +140,23 @@ MapScene.prototype.isWalkableTile = function(x, y) {
 
 MapScene.prototype.initPathfinding = function() {
 	this.mapgrid = new Array(this.definition.layers[1].width);
-	var rowlength = this.definition.layers[1].height;
+	var rowlength = this.definition.layers[1].width;
+
 	for (var i = 0; i < this.mapgrid.length; i++) {
-		this.mapgrid[i] = this.definition.layers[1].data.slice(i * rowlength, i * rowlength + rowlength);
+		this.mapgrid[i] = new Array(rowlength);
+	}
+
+	var x = 0;
+	var step = 0;
+	for (var i = 0; i < this.definition.layers[1].data.length; i++)
+	{
+		step++;
+		if (step == rowlength)
+		{
+			step = 0;
+			x++;
+		}
+		this.mapgrid[x][step] = this.definition.layers[1].data[i];
 	}
 };
 
@@ -153,7 +167,7 @@ MapScene.prototype.createNPCs = function() {
 	this.npcSprites.push(new Sprite('img/character_brown_blue_brown.png'));
 	this.npcSprites.push(new Sprite('img/character_hat_black_beige.png'));
 
-	for (var i = 0; i < 50; i++) {
+	for (var i = 0; i < 5; i++) {
 		var npc = new NPC(10,10, this.npcSprites[0]);
 		this.entities.push(npc);
 	}
