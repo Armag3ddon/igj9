@@ -70,7 +70,7 @@ var level2 = { "height":25,
         }, 
         {
          "firstgid":2501,
-         "image":"img/sprite_sheet_props_main.png",
+         "image":"..\/img\/sprite_sheet_props_main.png",
          "imageheight":1400,
          "imagewidth":1800,
          "margin":0,
