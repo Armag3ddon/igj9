@@ -4,6 +4,8 @@ function MapScene( definition ) {
 	this.definition = definition;
 };
 
+var mapBuffer = false;
+
 MapScene.prototype = new Scene;
 
 MapScene.prototype.drawBase = MapScene.prototype.draw;
@@ -12,28 +14,38 @@ MapScene.prototype.draw = function ( ctx ) {
 	var wdt = this.definition.tilewidth;
 	var hgt = this.definition.tileheight;
 
-	for (var i = 0; i < this.definition.layers.length; i++) {
+	if(mapBuffer == false) {
 
-		if (!this.definition.layers[i].visible) continue;
+		for (var i = 0; i < this.definition.layers.length; i++) {
 
-		for (var j = 0; j < this.definition.layers[i].data.length; j++) {
-			var tile = this.definition.layers[i].data[j];
+			if (!this.definition.layers[i].visible) continue;
 
-			if (tile == 0) continue;
+			for (var j = 0; j < this.definition.layers[i].data.length; j++) {
+				var tile = this.definition.layers[i].data[j];
 
-			var gWdt = this.definition.tilesets[0].tilewidth;
-			var gHgt = this.definition.tilesets[0].tileheight;
+				if (tile == 0) continue;
 
-			var columns = this.definition.tilesets[0].imagewidth / gWdt;
+				var gWdt = this.definition.tilesets[0].tilewidth;
+				var gHgt = this.definition.tilesets[0].tileheight;
 
-			var gX = gWdt * (tile % columns) - gWdt;
-			var gY = gHgt * Math.floor(tile / columns);
+				var columns = this.definition.tilesets[0].imagewidth / gWdt;
 
-			var tX = gWdt * (j % this.definition.layers[i].width);
-			var tY = gHgt * Math.floor(j / this.definition.layers[i].width);
+				var gX = gWdt * (tile % columns) - gWdt;
+				var gY = gHgt * Math.floor(tile / columns);
 
-			this.tileset.area(ctx, gX, gY, gWdt, gHgt, tX, tY);
+				var tX = gWdt * (j % this.definition.layers[i].width);
+				var tY = gHgt * Math.floor(j / this.definition.layers[i].width);
+
+				this.tileset.area(ctx, gX, gY, gWdt, gHgt, tX, tY);
+			}
 		}
+		mapBuffer = ctx;
+
+		//console.log("draw everything");
+	} else {
+		ctx = mapBuffer;
+
+		//console.log("draw mapBuffer");
 	}
 
 	this.drawBase(ctx);
