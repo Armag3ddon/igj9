@@ -27,5 +27,5 @@ function PlayerScene() {
 PlayerScene.prototype = new Scene;
 
 PlayerScene.prototype.down = function( key ) {
-	console.log("down");
+	
 };
