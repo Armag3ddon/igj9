@@ -43,8 +43,8 @@
 				g.load(function() {
 					scenes.menu = new MenuScene();
 					document.getElementById('loading').style.display = 'none';
-					//game.scene = scenes.menu;
-					game.scene = new MapScene(level1);
+					game.scene = scenes.menu;
+					//game.scene = new MapScene(level1);
 					mouse.init();
 					controls.init();
 					game.init();
@@ -55,6 +55,7 @@
 
 	<body onload="init();">
 		<canvas id="gameframe" width="1280" height="720"></canvas>
+		<canvas id="mapbuffer" width="1280" height="720" style="visibility:none;display:none;"></canvas>
 		<img src="img/loading.gif" id="loading">
 
 <!--		<audio loop autoplay="true">

@@ -4,6 +4,13 @@ function Player(posX, posY) {
 	this.finePosX = 0;
 	this.finePosY = 0;
 
+	this.sizeX = 36;
+	this.sizeY = 72;
+
+	this.walkAnimationFrames = 4;
+	this.walkAnimationDuration = 750;
+	this.walkAnimationStep = 0;
+
 	this.sprite = new Sprite('img/character_black_yellow_blue.png');
 
 	// speed in pixels / second
@@ -13,11 +20,6 @@ function Player(posX, posY) {
 	this.moveRight = false;
 	this.moveUp = false;
 	this.moveDown = false;
-
-//	this.speedX = mapInfo.tileSizeX * this.tilesPerSecond;
-//	this.speedY = mapInfo.tileSizeY * this.tilesPerSecond;
-
-//	this.positionFin = position;	// needed to check if a whole step is already done
 }
 
 Player.prototype.draw = function ( ctx ) {
@@ -26,8 +28,18 @@ Player.prototype.draw = function ( ctx ) {
 	var x = tilepos.x + this.finePosX;
 	var y = tilepos.y + this.finePosY;
 
+	var gX = Math.floor(this.walkAnimationStep / (this.walkAnimationDuration / this.walkAnimationFrames)) * this.sizeX;
+	var gY = 0;
+
+	if (this.moveRight && !this.isMovingY())
+		gY = this.sizeY;
+	if (this.moveDown)
+		gY = this.sizeY * 2;
+	if (this.moveLeft && !this.isMovingY())
+		gY = this.sizeY * 3;
+
 	// draw char sprite
-	this.sprite.area(ctx, 0,0, 36,72, x,y);
+	this.sprite.area(ctx, gX,gY, 36,72, x-18,y-65);
 };
 
 Player.prototype.update = function ( delta ) {
@@ -39,42 +51,72 @@ Player.prototype.update = function ( delta ) {
 	var newY = this.finePosY;
 
 	if (this.moveLeft)
-		newX -= speedX;
+	{
+		if (this.isMovingY())
+			newX -= speedX / 1.5;
+		else
+			newX -= speedX;
+	}
 	if (this.moveRight)
-		newX += speedX;
+	{
+		if (this.isMovingY())
+			newX += speedX / 1.5;
+		else
+			newX += speedX;
+	}
 	if (this.moveUp)
-		newY -= speedY;
+	{
+		if (this.isMovingX())
+			newY -= speedY / 1.5;
+		else
+			newY -= speedY;
+	}
 	if (this.moveDown)
-		newY += speedY;
+	{
+		if (this.isMovingX())
+			newY += speedY / 1.5;
+		else
+			newY += speedY;
+	}
 
-	if (newX < 0 || newX > tilesize.wdt)
+	if (newX != this.finePosX || newY != this.finePosY)
+	{
+		this.walkAnimationStep += delta;
+		if (this.walkAnimationStep > this.walkAnimationDuration)
+			this.walkAnimationStep -= this.walkAnimationDuration;
+	}
+
+	while (newX < 0 || newX > tilesize.wdt)
 	{
 		if (newX < 0)
 		{
 			if (game.scene.isWalkableTile(this.posX - 1, this.posY))
 			{
 				this.posX--;
+				game.scene.calcMapOffset();
 				newX += tilesize.wdt;
 			} else {
-				newY = 0;
+				newX = 0;
 			}
 		} else {
 			if (game.scene.isWalkableTile(this.posX + 1, this.posY))
 			{
 				this.posX++;
+				game.scene.calcMapOffset();
 				newX -= tilesize.wdt;
 			} else {
 				newX = tilesize.wdt;
 			}
 		}
 	}
-	if (newY < 0 || newY > tilesize.hgt)
+	while (newY < 0 || newY > tilesize.hgt)
 	{
 		if (newY < 0)
 		{
 			if (game.scene.isWalkableTile(this.posX, this.posY - 1))
 			{
 				this.posY--;
+				game.scene.calcMapOffset();
 				newY += tilesize.hgt;
 			} else {
 				newY = 0;
@@ -83,6 +125,7 @@ Player.prototype.update = function ( delta ) {
 			if (game.scene.isWalkableTile(this.posX, this.posY + 1))
 			{
 				this.posY++;
+				game.scene.calcMapOffset();
 				newY -= tilesize.hgt;
 			} else {
 				newY = tilesize.hgt;
@@ -92,7 +135,20 @@ Player.prototype.update = function ( delta ) {
 
 	this.finePosX = newX;
 	this.finePosY = newY;
+	game.scene.setFineOffset(newX, newY);
 };
+
+Player.prototype.isMoving = function() {
+	return this.moveDown || this.moveUp || this.moveLeft || this.moveRight;
+};
+
+Player.prototype.isMovingX = function () {
+	return this.moveLeft || this.moveRight;
+}
+
+Player.prototype.isMovingY = function () {
+	return this.moveUp || this.moveDown;
+}
 
 Player.prototype.startMove = function( key ) {
 	switch ( key ) {
@@ -127,3 +183,7 @@ Player.prototype.stopMove = function( key ) {
 			break;
 	}
 };
+
+Player.prototype.getPos = function() {
+	return { x: this.posX, y: this.posY };
+}
