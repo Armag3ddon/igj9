@@ -1,7 +1,5 @@
 var g = {
 	urls: [
-		'img/MenuBack.jpg',
-		'img/CityBack.jpg',
 		'img/CreditsBack.jpg',
 		'img/button_start.png',
 		'img/button_start_hover.png',
@@ -9,9 +7,6 @@ var g = {
 		'img/button_credits_hover.png',
 		'img/BackButton.png',
 		'img/BackButtonHL.png',
-		'img/LogButton.png',
-		'img/InventoryBack.png',
-		'img/Player.png',
 		'img/TiledBack.jpg',
 		'img/Districts/district1.png',
 		'img/Districts/district2.png',
