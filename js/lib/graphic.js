@@ -18,7 +18,6 @@ var g = {
 		'img/Districts/District3.png',
 		'img/Districts/District4.png',
 		'img/sprite_sheet_props.png',
-		'img/HF1_A2.png',
 		'img/character_black_yellow_blue.png',
 		'img/character_blonde_red_black.png',
 		'img/character_brown_blue_brown.png',

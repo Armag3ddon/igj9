@@ -44,7 +44,7 @@
 					scenes.menu = new MenuScene();
 					document.getElementById('loading').style.display = 'none';
 					//game.scene = scenes.menu;
-					game.scene = new PlayerScene();
+					game.scene = new MapScene(level1);
 					mouse.init();
 					controls.init();
 					game.init();

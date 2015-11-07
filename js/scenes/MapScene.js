@@ -1,7 +1,13 @@
 function MapScene( definition ) {
-	this.tileset = new Sprite('img/HF1_A2.png');
+	this.entities = [];
+
+	this.tileset = new Sprite(String(definition.tilesets[0].image));
+
+	this.player = new Player(10,10);
 
 	this.definition = definition;
+
+	this.entities.push(this.player);
 };
 
 MapScene.prototype = new Scene;
@@ -37,32 +43,35 @@ MapScene.prototype.draw = function ( ctx ) {
 	}
 
 	this.drawBase(ctx);
+}
 
-	//experiment ->
+MapScene.prototype.getTilePos = function(x, y) {
+	var wdt = this.definition.tilewidth;
+	var hgt = this.definition.tileheight;
 
-	/*var newTileset1 = new AnimationSprite('img/character_black_yellow_blue.png', 4);
-	var newTileset2 = new AnimationSprite('img/character_blonde_red_black.png', 4);
-	var newTileset3 = new AnimationSprite('img/character_hat_black_beige.png', 4);
-	var newTileset4 = new AnimationSprite('img/character_brown_blue_brown.png',4);
+	return { x: x*wdt, y: y*hgt };
+}
 
-	var cX = 100;
-	var cY = 100;
+MapScene.prototype.down = function ( key ) {
+	switch( key ) {
+		case 'down': case 'up': case 'left': case 'right':
+			this.player.startMove(key);
+			break;
+	}
+}
 
-	var cWdtF = 144;
-	var cHgtF = 288;
+MapScene.prototype.up = function ( key ) {
+	switch( key ) {
+		case 'down': case 'up': case 'left': case 'right':
+			this.player.stopMove(key);
+			break;
+	}
+}
 
-	var cWdt = cWdtF / 4;	//36
-	var cHgt = cHgtF / 4;	//72
+MapScene.prototype.getTileSize = function() {
+	return { wdt: this.definition.tileheight, hgt: this.definition.tilewidth };
+}
 
-	var cHeadHgt = 24;
-	var cChestHgt = 23;
-	var cPantHgt = 20;
-	var ctx2 = mapBuffer;
-
-	newTileset1.draw(ctx2, 0, 288 / 2, 1);
-	newTileset2.draw(ctx2, 0, 288 / 2 + cHeadHgt, 1);
-	newTileset3.draw(ctx2, 0, 288 / 2 + cHeadHgt + cChestHgt, 1);
-	//newTileset4.area(ctx2, 0, 288 / 2, cWdt, cHgt, 150, 100);
-
-	//experiment <-*/
+MapScene.prototype.isWalkableTile = function(x, y) {
+	return true;
 }
