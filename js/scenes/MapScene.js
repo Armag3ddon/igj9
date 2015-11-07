@@ -19,6 +19,9 @@ function MapScene( definition ) {
 	this.buffer.width = this.mapSizeX;
 	this.buffer.height = this.mapSizeY;
 
+	this.cameraThresholdX = 320;
+	this.cameraThresholdY = 180;
+
 	this.calcMapOffset();
 
 	this.renderMap();
@@ -77,9 +80,10 @@ MapScene.prototype.calcMapOffset = function() {
 	var mapHgt = this.definition.layers[0].height * hgt;
 
 	var playerPos = this.player.getPos();
+	var cameraOffset = this.player.getCamPos();
 
-	var screenX = 1280/2 - playerPos.x * wdt;
-	var screenY = 720/2 - playerPos.y * hgt;
+	var screenX = 1280/2 - playerPos.x * wdt + cameraOffset.x;
+	var screenY = 720/2 - playerPos.y * hgt + cameraOffset.y;
 
 	this.mapOffset.x = screenX;
 	this.mapOffset.y = screenY;

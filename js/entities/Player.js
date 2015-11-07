@@ -3,6 +3,8 @@ function Player(posX, posY) {
 	this.posY = posY;
 	this.finePosX = 0;
 	this.finePosY = 0;
+	this.cameraX = 0;
+	this.cameraY = 0;
 
 	this.sizeX = 36;
 	this.sizeY = 72;
@@ -14,7 +16,7 @@ function Player(posX, posY) {
 	this.sprite = new Sprite('img/character_black_yellow_blue.png');
 
 	// speed in pixels / second
-	this.tilesPerSecond = 4;
+	this.tilesPerSecond = 8;
 
 	this.moveLeft = false;
 	this.moveRight = false;
@@ -86,6 +88,9 @@ Player.prototype.update = function ( delta ) {
 			this.walkAnimationStep -= this.walkAnimationDuration;
 	}
 
+	var movedX = newX - this.finePosX;
+	var movedY = newY - this.finePosY;
+
 	while (newX < 0 || newX > tilesize.wdt)
 	{
 		if (newX < 0)
@@ -93,19 +98,19 @@ Player.prototype.update = function ( delta ) {
 			if (game.scene.isWalkableTile(this.posX - 1, this.posY))
 			{
 				this.posX--;
-				game.scene.calcMapOffset();
 				newX += tilesize.wdt;
 			} else {
 				newX = 0;
+				movedX = 0;
 			}
 		} else {
 			if (game.scene.isWalkableTile(this.posX + 1, this.posY))
 			{
 				this.posX++;
-				game.scene.calcMapOffset();
 				newX -= tilesize.wdt;
 			} else {
 				newX = tilesize.wdt;
+				movedX = 0;
 			}
 		}
 	}
@@ -116,26 +121,52 @@ Player.prototype.update = function ( delta ) {
 			if (game.scene.isWalkableTile(this.posX, this.posY - 1))
 			{
 				this.posY--;
-				game.scene.calcMapOffset();
 				newY += tilesize.hgt;
 			} else {
 				newY = 0;
+				movedY = 0;
 			}
 		} else {
 			if (game.scene.isWalkableTile(this.posX, this.posY + 1))
 			{
 				this.posY++;
-				game.scene.calcMapOffset();
 				newY -= tilesize.hgt;
 			} else {
 				newY = tilesize.hgt;
+				movedY = 0;
 			}
 		}
 	}
 
+	this.cameraX += movedX;
+	this.cameraY += movedY;
+
+	var mapMove = false;
+	if (this.cameraX < -game.scene.cameraThresholdX) {
+		mapMove = true;
+		this.cameraX = -game.scene.cameraThresholdX;
+	}
+	if (this.cameraX > game.scene.cameraThresholdX) {
+		mapMove = true;
+		this.cameraX = game.scene.cameraThresholdX;
+	}
+	if (this.cameraY < -game.scene.cameraThresholdY) {
+		mapMove = true;
+		this.cameraY = -game.scene.cameraThresholdY;
+	}
+	if (this.cameraY > game.scene.cameraThresholdY) {
+		mapMove = true;
+		this.cameraY = game.scene.cameraThresholdY;
+	}
+
 	this.finePosX = newX;
 	this.finePosY = newY;
-	game.scene.setFineOffset(newX, newY);
+
+	if (mapMove)
+	{
+		game.scene.calcMapOffset();
+		game.scene.setFineOffset(newX, newY);
+	}
 };
 
 Player.prototype.isMoving = function() {
@@ -186,4 +217,8 @@ Player.prototype.stopMove = function( key ) {
 
 Player.prototype.getPos = function() {
 	return { x: this.posX, y: this.posY };
+}
+
+Player.prototype.getCamPos = function() {
+	return { x: this.cameraX, y: this.cameraY };
 }
