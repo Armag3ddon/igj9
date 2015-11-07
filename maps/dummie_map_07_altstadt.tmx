@@ -1,16 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="25" tilewidth="36" tileheight="28" nextobjectid="1">
- <tileset firstgid="1" name="sprite_sheet_props" tilewidth="36" tileheight="28">
+ <tileset firstgid="1" name="sprite_sheet_props" tilewidth="36" tileheight="28" tilecount="2500">
   <image source="../img/sprite_sheet_props.png" width="1800" height="1400"/>
  </tileset>
- <layer name="map" width="30" height="25">
+ <tileset firstgid="2501" name="sprite_sheet_props_main" tilewidth="36" tileheight="28" tilecount="2500">
+  <image source="../img/sprite_sheet_props_main.png" width="1800" height="1400"/>
+ </tileset>
+ <layer name="Floor" width="30" height="25">
   <data encoding="base64" compression="zlib">
-   eJztlU0KgCAQRrXz6KILuelCedtoFUHG8OHkQP5GwgMdBx+OinZSyhIcwUTGAQv4iwUIccxHXIJcXlzXCxnFa4BWXqmnFy9XJ86bi7feFejdu2l1t7Nf00updb4cvXsxLzdP3rkQJb2xPUq9Ler89fuM750jtqYkX/rv59jj7017dx0n5HNxOjeS9wBOOXE+
+   eJzdlW0KgCAMhvtl2IHEI0n0caPqTtV9ElISUWY0nfTjIaHJw7s2kl3TSAR6Q6tRGmGezHmP4YG8ishLldd6D07T59Jeqry+NxfQPJfy+vP8d2+pPltS8w7IjIlelZnavDu/UYjnmvNSeSeA2dzfEmrdeuj/2wOc/LkP1br1X/fX7uOiWSPIgDf392URL9RnzLkp4bX7Gssb6kfIK16ev/b5AgFPCwQ=
+  </data>
+ </layer>
+ <layer name="House" width="30" height="25">
+  <data encoding="base64" compression="zlib">
+   eJwrEWBgKEHCSbwMDMkEcCoQ83MzMAhAsSAQEwP4BRFYmweCdYBYF4inAM2cCsTT8ODpQOwItMsJip1x2JvNhcovFkTgWB4Ejuchzt0g8Auo9jcQ/wHiv0Tq+wZUpwl0sxYQ9/Mg8EQS7NUB6tUFYj0g1uclTo8GUF001N6DPBB8CIgPk2AvOfEbBbU3hkh3YgPExC866AHa1wvEfRTYWwy0qwSKS4m0lxpgKdCuZVC8nI72XgfadQOKb9LR3h+M2NnD1d5RMPAAvT4Y7GCouXewAlA+h2F6Al5BBKYnWAy0bwkU0xN8ArYrPgPxFxLaF9QAKsD6XhWI1Sio94kFlkh5MgxoXzgQR9DBXmSAbC8Ahqw9lQ==
   </data>
  </layer>
  <layer name="walkable" width="30" height="25" visible="0">
   <data encoding="base64" compression="zlib">
-   eJxjZGBgYKQCJgSoYQct7CUWjNpLXfVD3V5qAUrtpVf8jnR7R8EoGAVDB1DSfqBme4MaYNRewvYSii987qRm+4pe9gIAA8sAvw==
+   eJxjZGBgYKQCJgZQwx5q20ssGLWXND3kgqFkLzUApfYy4mAPVnuPcmJn0xoMlL2jYBSMgoEBA1Geo9sLKmvwYWRAjBpi7aUUjNo7uO0FALBsEiw=
+  </data>
+ </layer>
+ <layer name="Objekte" width="30" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYMAEAlwImoObgYGTG1WMGuAeJ4S+zYld3gpopzU3dexCBjxQ9/OS4Q+Qm+/jcC8ucBuq5xZUHzcZfgKFuSCJ7hWE6oH515YGYYkNcHEj/EoucCLDrTbc5MUpDNxDcjOpcUwJAMUtF9S/pMYxCCxB0rOURP02FKSJa0h2XSfB3nI+BLuCD7c6agNku8rpaO8oGAWjYODBTl78mBi15IDXvPgxMWpHwShABwA+CioL
   </data>
  </layer>
 </map>
