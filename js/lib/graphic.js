@@ -24,7 +24,7 @@ var g = {
 		'img/character_brown_blue_brown.png',
 		'img/character_hat_black_beige.png',
 		'img/game_over.jpg',
-		'img/main_screen.jpg',
+		'img/main_screen.jpg'
 
 	],
 

@@ -15,7 +15,6 @@
 		<script type="text/javascript" src="js/lib/util.js"></script>
 		<script type="text/javascript" src="js/lib/vector.js"></script>
 		<script type="text/javascript" src="js/lib/mouse.js"></script>
-		<script type="text/javascript" src="js/lib/position.js"></script>
 
 		<script type="text/javascript" src="js/ui/buttons.js"></script>
 		<script type="text/javascript" src="js/ui/LogButton.js"></script>
@@ -44,8 +43,8 @@
 				g.load(function() {
 					scenes.menu = new MenuScene();
 					document.getElementById('loading').style.display = 'none';
-					game.scene = scenes.menu;
-					//game.scene = new MapScene(level1);
+					//game.scene = scenes.menu;
+					game.scene = new MapScene(level1);
 					mouse.init();
 					controls.init();
 					game.init();
