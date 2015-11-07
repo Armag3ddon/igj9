@@ -15,7 +15,8 @@ var g = {
 		'img/Districts/District2.png',
 		'img/Districts/District3.png',
 		'img/Districts/District4.png',
-		'img/sprite_sheet_props.png'
+		'img/sprite_sheet_props.png',
+		'img/HF1_A2.png'
 	],
 
 	add: function( url ) {

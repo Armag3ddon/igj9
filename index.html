@@ -23,6 +23,7 @@
 
 		<script type="text/javascript" src="js/scenes/MenuScene.js"></script>
 		<script type="text/javascript" src="js/scenes/CityScene.js"></script>
+		<script type="text/javascript" src="js/scenes/MapScene.js"></script>
 		<script type="text/javascript" src="js/scenes/PlayerScene.js"></script>
 		<script type="text/javascript" src="js/scenes/CreditsScene.js"></script>
 
@@ -34,6 +35,7 @@
 		<script type="text/javascript" src="js/entities/District.js"></script>
 
 		<script type="text/javascript" src="data/city.js"></script>
+		<script type="text/javascript" src="data/level1.js"></script>
 
 		<script type="text/javascript">
 			var scenes = {};
@@ -42,7 +44,8 @@
 				g.load(function() {
 					scenes.menu = new MenuScene();
 					document.getElementById('loading').style.display = 'none';
-					game.scene = scenes.menu;
+					//game.scene = scenes.menu;
+					game.scene = new MapScene(level1);
 					mouse.init();
 					controls.init();
 					game.init();
