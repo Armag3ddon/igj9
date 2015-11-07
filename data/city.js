@@ -7,7 +7,9 @@ var city = {
 		iconX: 0,
 		iconY: 235,
 		iconWidth: 55,
-		iconHeight: 92
+		iconHeight: 92,
+		districtInfo: "Gruen wie das Gras.",
+		map: Level1
 	},
 	district2: {
 		posX: 284,
@@ -16,7 +18,9 @@ var city = {
 		iconX: 55,
 		iconY: 235,
 		iconWidth: 55,
-		iconHeight: 92
+		iconHeight: 92,
+		districtInfo: "Rot wie Kultistenblut",
+		map: Level1
 	},
 	district3: {
 		posX: 388,
@@ -25,7 +29,9 @@ var city = {
 		iconX: 110,
 		iconY: 235,
 		iconWidth: 55,
-		iconHeight: 92
+		iconHeight: 92,
+		districtInfo: "Lila oder doch Purple?",
+		map: Level1
 	},
 	district4: {
 		posX: 231,
@@ -34,6 +40,8 @@ var city = {
 		iconX: 165,
 		iconY: 235,
 		iconWidth: 55,
-		iconHeight: 92
+		iconHeight: 92,
+		districtInfo: "Blau wie Thomas Pulli.",
+		map: Level1
 	}
 };

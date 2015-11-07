@@ -66,8 +66,8 @@ District.prototype.click = function ( pos ) {
 	if( this.area.inside( pos )) {
 		this.areaInfo = true;
 		this.entities[this.entDis].show = true;
-		this.entities[this.entDis].info = "Keine Informationen zu diesem Stadtteil vorhanden.";
-		this.entities[this.entDis].level = level1;
+		this.entities[this.entDis].info = this.definition.districtInfo;
+		this.entities[this.entDis].level = this.definition.map;
 	}
 
 }
