@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="25" tilewidth="36" tileheight="28" nextobjectid="1">
+ <tileset firstgid="1" name="sprite_sheet_props" tilewidth="36" tileheight="28" tilecount="2500">
+  <image source="../img/sprite_sheet_props.png" width="1800" height="1400"/>
+ </tileset>
+ <tileset firstgid="2501" name="sprite_sheet_waypoints" tilewidth="36" tileheight="28" tilecount="13">
+  <image source="../img/sprite_sheet_waypoints.png" width="480" height="32"/>
+ </tileset>
+ <layer name="Kachelebene 1" width="30" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzt1VEKgCAMgGFXt4k8VSeq43Sy6KWQkGBsOmcZxB7+N/VDEfWdc55oTjShqHnUmpLM5V1qjLlt3Fwjk7nPuguTuf92UzZ2ueL4He4kLufXuGt/JXFxpW4Iv4da94B2bu6ulLjxvCXV3HPt/5T7o950N/jGHWy/avcEhThMmQ==
+  </data>
+ </layer>
+</map>
