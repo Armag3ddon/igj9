@@ -1,7 +1,7 @@
 function CreditsScene() {
-	this.bg = new Sprite('img/game_over.jpg');
+	this.bg = new Sprite('img/credits.jpg');
 
-	this.entities = [ new Button('img/BackButton.png', 'img/BackButtonHL.png', 35, 35, function() {
+	this.entities = [ new Button('img/button_back.png', 'img/button_back_hover.png', 840, 600, function() {
 						  game.scene = scenes.menu;
 					  }, '')
 					 ];

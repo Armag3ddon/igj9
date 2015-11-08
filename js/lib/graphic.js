@@ -1,12 +1,15 @@
 var g = {
 	urls: [
 		'img/CreditsBack.jpg',
+		'img/BackButton.png',
+		'img/BackButtonHL.png',
+		'img/credits.jpg',
 		'img/button_start.png',
 		'img/button_start_hover.png',
 		'img/button_credits.png',
 		'img/button_credits_hover.png',
-		'img/BackButton.png',
-		'img/BackButtonHL.png',
+		'img/button_back.png',
+		'img/button_back_hover.png',
 		'img/TiledBack.jpg',
 		'img/Districts/district1.png',
 		'img/Districts/district2.png',
