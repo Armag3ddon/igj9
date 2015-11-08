@@ -54,9 +54,9 @@ District.prototype.click = function ( pos ) {
 				break;
 			case 'district5.png':
 				game.scene = new MapScene(level5);
+				console.log("test");
 				break;
-			default:
-				
+			default:				
 				break;
 		}
 	}

@@ -33,7 +33,7 @@ var level5 = { "height":30,
  "tilesets":[
         {
          "firstgid":1,
-         "image":"..\/img\/sprite_sheet_props.png",
+         "image":"img/sprite_sheet_props.png",
          "imageheight":1400,
          "imagewidth":1800,
          "margin":0,
