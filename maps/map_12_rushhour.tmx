@@ -3,9 +3,14 @@
  <tileset firstgid="1" name="sprite_sheet_props_main" tilewidth="36" tileheight="28">
   <image source="../img/sprite_sheet_props_main.png" width="1800" height="1400"/>
  </tileset>
- <layer name="maps" width="36" height="30">
+ <layer name="map" width="36" height="30">
   <data encoding="base64" compression="zlib">
    eJztl00KgCAQhd20jq7UkcRd13HRz43K7pKBQUhO/kw1wSw+IrDnkwHfSwkhVIDGoi3SPVtg7ZMavpYu0MLQoO7nzXn1AIOnNVuWRFI1NPMrakfoPfc7SCd3T4YeI8Dk1kjE/YxlBUi5W82Nf+hMB1Tyi1q+Y/rByFPMeVHz8+a8YrrCwd4VoH6C0Vm+vv+YNLhvMCXE5DJGvp81cvrG+W5+4n+wq66JzYpSP75GyM8GRdtgIw==
+  </data>
+ </layer>
+ <layer name="walkable" width="36" height="30" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJztlEEOwCAIBJf/f7pXQqKVQE01MwkXxXX0gEmyUG/E/lF1ZOAzP/M3nxVWnTt6AOBeKnP6q3uzPrsz8MHnVB+/L80zRrmZ9WwPAICnOguz2Tt84iyuvKv7f/yZB1xuASU=
   </data>
  </layer>
  <layer name="ebene1" width="36" height="30">
@@ -16,11 +21,6 @@
  <layer name="ebene2" width="36" height="30">
   <data encoding="base64" compression="zlib">
    eJxjYMAE9oxYBAcI3AfiQiLd445FHbIYMf4ShdJuONQK4jGjFErfh9KVWNTCxHD5qxSJDVLjDmVX4LDXmQg/wdy8GotamBg+f6GbAwKrKEgjxLiZWmoGC/hPoX5LMv26mAI7r1CgdxTQDiwnVQOOtEOKOSTbOQroBiyQ2FfpYB8TncpdUF1IdluEEWEGISABpWF1vggetch1Nky9OJQvhUYTAzwYEW6AucOLAVL3g+p8BSB2I9IskHqQPk8o3weJvo9dCwoAqaliRLjBC0kOVPeD6vwgEuIDpB5Xu4LY9sYaCto9pOgbbu0NfICdTH+Qmu/JtWcoAErbc0MJEFP3Y6t3KGkzDMb2xmDqF4MAzn4xDnH0upCc9j26GUvR+PRof+AC6G4BAQBK4SfA
-  </data>
- </layer>
- <layer name="walkable" width="36" height="30" visible="0">
-  <data encoding="base64" compression="zlib">
-   eJztlEEOwCAIBJf/f7pXQqKVQE01MwkXxXX0gEmyUG/E/lF1ZOAzP/M3nxVWnTt6AOBeKnP6q3uzPrsz8MHnVB+/L80zRrmZ9WwPAICnOguz2Tt84iyuvKv7f/yZB1xuASU=
   </data>
  </layer>
 </map>
