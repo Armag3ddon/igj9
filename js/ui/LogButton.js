@@ -59,7 +59,7 @@ LogButton.prototype.addLog = function(log) {
 
 function LogEntry(logButton, text) {
 	this.logButton = logButton;
-	this.maxLength = 36;
+	this.maxLength = 54;
 	this.margin = 10;
 	var lines = [];
 	var ind = 0;
@@ -84,8 +84,8 @@ function LogEntry(logButton, text) {
 }
 
 LogEntry.prototype.draw = function( ctx ) {
-	ctx.fillStyle = '#ff0000';
-	ctx.font = '20px Verdana';
+	ctx.fillStyle = config.fontcolor;
+	ctx.font = config.font;
 	for (ind = 0; ind < this.lines.length; ind++) {
 		var line = this.lines[ind];
 		ctx.fillText( line.text, line.position.x, line.position.y + config.fontsize + this.margin);
