@@ -50,13 +50,17 @@
 
 			function init() {
 				g.load(function() {
-					scenes.menu = new MenuScene();
-					document.getElementById('loading').style.display = 'none';
-					game.scene = scenes.menu;
-					//game.scene = new MapScene(level1);
-					mouse.init();
-					controls.init();
-					game.init();
+				console.log("hu");
+					sound.load(function() {
+					console.log("hey");
+						scenes.menu = new MenuScene();
+						document.getElementById('loading').style.display = 'none';
+						game.scene = scenes.menu;
+						//game.scene = new MapScene(level1);
+						mouse.init();
+						controls.init();
+						game.init();
+					});
 				});
 			}
 		</script>

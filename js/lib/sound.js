@@ -1,21 +1,40 @@
 var sound = {
-	sampels: ['sounds/menu/button_clicked.mp3'],
+	urls: ['sounds/Wololo.ogg'],
 
 	play: function( file ) {
 		var self = this;
 
-		if( !this.sampels[file] )
-			this.sampels[file] = [];
+		if( !this.urls[file] )
+			this.urls[file] = [];
 
-		if( this.sampels[file].length ) {
-			var s = this.sampels[file].pop();
+		if( this.urls[file].length ) {
+			var s = this.urls[file].pop();
 			s.play();
 			return s;
 		} else {
 			var s = new Audio( file );
-			s.onended = function() { self.sampels[file].push( this ); };
+			s.onended = function() { self.urls[file].push( this ); };
 			s.play();
 			return s;
 		}
+	},
+
+	load: function( callback ) {
+		var total = 0, loaded = 0;
+
+		function complete() {
+			if( ++loaded >= total ) callback();
+		}
+
+		while( this.urls.length ) {
+			var url = this.urls.shift();
+			if( typeof this[url] == 'undefined' ) {
+				total++;
+				this[url] = new Audio(url);
+				this[url].oncanplaythrough = complete;
+			}
+		}
+
+		if( total == 0 ) callback();
 	}
 }
