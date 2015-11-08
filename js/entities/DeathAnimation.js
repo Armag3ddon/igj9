@@ -46,7 +46,7 @@ DeathAnimation.prototype.update = function ( delta ) {
 			this.bsAnimationStep += delta;
 			if (this.bsAnimationStep > this.bsAnimationDuration) {
 				game.winCounter++;
-				if (false && game.winCounter < 6) {
+				if (game.winCounter < 6) {
 					// level selection
 					return game.scene = new CityScene();
 				} else {
