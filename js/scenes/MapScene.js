@@ -175,7 +175,7 @@ MapScene.prototype.createNPCs = function() {
 	this.npcSprites.push(new Sprite('img/character_brown_blue_brown.png'));
 	this.npcSprites.push(new Sprite('img/character_hat_black_beige.png'));
 
-	for (var i = 0; i < 50; i++) {
+	for (var i = 0; i < 20; i++) {
 		var ind = Math.floor((Math.random() * this.npcSprites.length) + 0);
 		var pos = this.getRandomTile();
 		var npc = new NPC(pos.x,pos.y, this.npcSprites[ind]);
@@ -184,7 +184,8 @@ MapScene.prototype.createNPCs = function() {
 	
 	// create cultist
 	var pos = this.getRandomTile(100000);
-	this.cultist = new Cultist(pos.x,pos.y);
+	var ind = Math.floor((Math.random() * this.npcSprites.length) + 0);
+	this.cultist = new Cultist(pos.x,pos.y, this.npcSprites[ind]);
 	this.entities.push(this.cultist);
 };
 

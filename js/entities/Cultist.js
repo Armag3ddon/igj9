@@ -1,9 +1,9 @@
-function Cultist(posX, posY) {
+function Cultist(posX, posY, sprite) {
 	NPC.call(this, posX, posY);	// call super constructor
 	
 	this.health = 3;
 	this.job = "cultist";
-	this.sprite = new Sprite('img/character_cultist.png');
+	this.sprite = sprite;
 }
 
 Cultist.prototype = new NPC;
