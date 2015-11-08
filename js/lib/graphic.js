@@ -15,6 +15,7 @@ var g = {
 		'img/Districts/district2.png',
 		'img/Districts/district3.png',
 		'img/Districts/district4.png',
+		'img/Districts/district5.png',
 		'img/sprite_sheet_props.png',
 		'img/sprite_sheet_props_main.png',
 		'img/character_black_yellow_blue.png',
