@@ -171,7 +171,7 @@ MapScene.prototype.createNPCs = function() {
 	this.npcSprites.push(new Sprite('img/character_hat_black_beige.png'));
 
 	for (var i = 0; i < 30; i++) {
-		var ind = Math.min(i, this.npcSprites.length-1);
+		var ind = Math.floor((Math.random() * this.npcSprites.length) + 0);
 		var pos = this.getRandomTile();
 		var npc = new NPC(pos.x,pos.y, this.npcSprites[ind]);
 		this.entities.push(npc);
