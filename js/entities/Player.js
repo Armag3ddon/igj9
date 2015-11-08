@@ -3,8 +3,8 @@ function Player(posX, posY) {
 	this.posY = posY;
 	this.finePosX = 0;
 	this.finePosY = 0;
-	this.cameraX = 0;
-	this.cameraY = 0;
+	this.cameraX = 36;
+	this.cameraY = 72;
 
 	this.sizeX = 72;
 	this.sizeY = 144;
@@ -13,16 +13,19 @@ function Player(posX, posY) {
 	this.walkAnimationDuration = 750;
 	this.walkAnimationStep = 0;
 
-	//this.sprite = new Sprite('img/character_black_yellow_blue.png');
 	this.sprite = new Sprite('img/main_character.png');
+	
+	this.dmg = 1;
 
 	// speed in pixels / second
-	this.tilesPerSecond = 6;
+	//this.tilesPerSecond = 6;
+	this.tilesPerSecond = 10;	// test
 
 	this.moveLeft = false;
 	this.moveRight = false;
 	this.moveUp = false;
 	this.moveDown = false;
+	this.attack = false;
 }
 
 Player.prototype.draw = function ( ctx ) {
@@ -40,9 +43,13 @@ Player.prototype.draw = function ( ctx ) {
 		gY = 0;
 	if (this.moveLeft && !this.isMovingY())
 		gY = this.sizeY * 3;
-
+	
+	if (this.attack)
+		gY += this.sizeY*4;
+	
 	// draw char sprite
-	this.sprite.area(ctx, gX,gY, this.sizeX,this.sizeY, x-18,y-65);
+	this.sprite.area(ctx, gX,gY, this.sizeX,this.sizeY, x-36,y-130);
+	//ctx.strokeRect(x-18,y-46,36,28);	// collition box
 };
 
 Player.prototype.update = function ( delta ) {
@@ -53,33 +60,64 @@ Player.prototype.update = function ( delta ) {
 	var newX = this.finePosX;
 	var newY = this.finePosY;
 
-	if (this.moveLeft)
-	{
-		if (this.isMovingY())
-			newX -= speedX / 1.5;
+	if (!this.attack) {	// do not walk while attacking
+		if (this.moveLeft)
+		{
+			if (this.isMovingY())
+				newX -= speedX / 1.5;
+			else
+				newX -= speedX;
+		}
+		if (this.moveRight)
+		{
+			if (this.isMovingY())
+				newX += speedX / 1.5;
+			else
+				newX += speedX;
+		}
+		if (this.moveUp)
+		{
+			if (this.isMovingX())
+				newY -= speedY / 1.5;
+			else
+				newY -= speedY;
+		}
+		if (this.moveDown)
+		{
+			if (this.isMovingX())
+				newY += speedY / 1.5;
+			else
+				newY += speedY;
+		}
+	} else {
+		// get attacked tile position
+		var enemyTileX = this.posX;
+		var enemyTileY = this.posY;
+
+		if (this.moveRight && !this.isMovingY())
+			enemyTileX++;
+		else if (this.moveUp)
+			enemyTileY--;
+		else if (this.moveLeft && !this.isMovingY())
+			enemyTileX--;
 		else
-			newX -= speedX;
-	}
-	if (this.moveRight)
-	{
-		if (this.isMovingY())
-			newX += speedX / 1.5;
-		else
-			newX += speedX;
-	}8
-	if (this.moveUp)
-	{
-		if (this.isMovingX())
-			newY -= speedY / 1.5;
-		else
-			newY -= speedY;
-	}
-	if (this.moveDown)
-	{
-		if (this.isMovingX())
-			newY += speedY / 1.5;
-		else
-			newY += speedY;
+			enemyTileY++;
+			
+		// check for enemy in attacked tile
+		var npcList = game.scene.entities
+		for (ind = 1; ind < npcList.length; ind++) {
+			var npc = npcList[ind];
+			var npcPosX = npc.posX;
+			var npcPosY = npc.posY;
+			
+			if (npcPosX == enemyTileX && npcPosY == enemyTileY) {
+				npc.attacked(this.dmg);
+			}
+		}
+		
+		this.walkAnimationStep += delta;
+		if (this.walkAnimationStep > this.walkAnimationDuration)
+			this.walkAnimationStep -= this.walkAnimationDuration;
 	}
 
 	if (newX != this.finePosX || newY != this.finePosY)
@@ -215,6 +253,14 @@ Player.prototype.stopMove = function( key ) {
 			break;
 	}
 };
+
+Player.prototype.startAttack = function() {
+	if (!this.attack) this.attack = true;
+}
+
+Player.prototype.stopAttack = function() {
+	if (this.attack) this.attack = false;
+}
 
 Player.prototype.getPos = function() {
 	return { x: this.posX, y: this.posY };

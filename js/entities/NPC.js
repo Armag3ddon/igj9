@@ -3,6 +3,9 @@ function NPC(posX, posY, sprite) {
 	this.posY = posY;
 	this.finePosX = 18;
 	this.finePosY = 14;
+	this.job = "civilist";
+	this.alive = true;
+	this.health = 1;
 
 	this.sizeX = 36;
 	this.sizeY = 72;
@@ -194,3 +197,21 @@ NPC.prototype.getPath = function() {
 NPC.prototype.isMoving = function() {
 	return this.moveDown || this.moveUp || this.moveLeft || this.moveRight;
 };
+
+NPC.prototype.attacked = function(dmg) {
+	console.log("NPC got attacked");
+	this.health -= dmg;
+	if (this.health <= 0) {
+		this.die();
+	}
+}
+
+NPC.prototype.die = function() {
+	console.log("died");
+	this.alive = false;
+	
+	var ind = game.scene.entities.indexOf(this);
+	if (ind != -1) {
+		game.scene.entities.splice(ind, 1);
+	}
+}
