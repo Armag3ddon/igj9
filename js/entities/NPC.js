@@ -209,7 +209,7 @@ NPC.prototype.attacked = function(dmg) {
 }
 
 NPC.prototype.die = function() {
-	console.log("died");
+	console.log("NPC died");
 	this.alive = false;
 	
 	var ind = game.scene.entities.indexOf(this);

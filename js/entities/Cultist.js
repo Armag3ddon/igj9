@@ -9,10 +9,13 @@ function Cultist(posX, posY) {
 Cultist.prototype = new NPC;
 
 Cultist.prototype.die = function() {
-	//work in progress
-	NPC.prototype.die();
-	//console.log(scenes);
+	//NPC.prototype.die();
+	console.log("a cultist died");
+	this.alive = false;
+
+	game.scene.entities.splice(0, game.scene.entities.length);
+	
 	// switch scene
-	//game.scene = new CreditsScene;
+	game.scene = new CityScene();
 	
 }

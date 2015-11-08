@@ -30,8 +30,6 @@ District.prototype.draw = function ( ctx ) {
 	if(this.area.inside(mouse)) {
 		var iconArea = new Rect( new V2( offsetX , offsetY ), new V2( offsetX+this.icon.Wdt, offsetY+this.icon.Hgt ));
 		this.img.draw(ctx, this.posX, this.posY);
-	} else if(this.definition.background == 'District5.png') {
-		console.log("<--");
 	}
 }
 

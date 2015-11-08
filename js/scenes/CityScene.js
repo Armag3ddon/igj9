@@ -8,7 +8,6 @@ function CityScene() {
 
 	for (var i = 1; i <= city.districtCount; i++) {
 		this.entities.push( new District( city['district' + i], this.entities ) );
-		console.log("Dis" + i +": Okay");
 	}
 
 	this.entities.push( new LogButton );
