@@ -313,6 +313,7 @@ Player.prototype.attack = function() {
 	if (this.attacking) return;
 
 	this.attacking = true;
+	sound.play('sounds/Swing.ogg');
 	this.attackDirection = this.sizeY * 2;
 	if (this.moveRight && !this.isMovingY())
 		this.attackDirection = this.sizeY;

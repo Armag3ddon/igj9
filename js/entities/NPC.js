@@ -201,7 +201,6 @@ NPC.prototype.isMoving = function() {
 };
 
 NPC.prototype.attacked = function(dmg) {
-	console.log("NPC got attacked");
 	this.health -= dmg;
 	if (this.health <= 0) {
 		this.die();
@@ -209,11 +208,13 @@ NPC.prototype.attacked = function(dmg) {
 }
 
 NPC.prototype.die = function() {
-	console.log("NPC died");
 	this.alive = false;
-	
+
+	var death = new DeathAnimation(this.posX, this.finePosX, this.posY, this.finePosY);
+	game.scene.entities.push(death);
+	sound.play('sounds/Death.ogg');
+
 	var ind = game.scene.entities.indexOf(this);
-	console.log(this);
 	if (ind != -1) {
 		game.scene.entities.splice(ind, 1);
 	}

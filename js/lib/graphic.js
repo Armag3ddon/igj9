@@ -23,7 +23,9 @@ var g = {
 		'img/main_screen.jpg',
 		'img/map_screen.jpg',
 		'img/character_cultist.png',
-		'img/main_character.png'
+		'img/main_character.png',
+		'img/death_animation.png',
+		'img/bloodstone_animation.png'
 
 	],
 

@@ -1,5 +1,9 @@
 var sound = {
-	urls: ['sounds/Wololo.ogg'],
+	urls: ['sounds/Wololo.ogg',
+			'sounds/Swing.ogg',
+			'sounds/Death.ogg',
+			'sounds/Death2.ogg',
+			'sounds/Hurt.ogg'],
 
 	play: function( file ) {
 		var self = this;
