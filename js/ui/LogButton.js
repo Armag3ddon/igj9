@@ -25,7 +25,9 @@ function LogButton()
 					new LogEntry(this, "Tag 7: 	Wunderbar, wir haben es!  Sie habend das Portal <area> versteckt. Wir müssen das Portal unbedingt versiegeln!")];
 	
 	var lastEntryId = game.winCounter+1;
+	lastEntryId = 6+1;	// test
 	this.entities.splice(lastEntryId, this.entities.length);
+	
 }
 
 LogButton.prototype.open = function() {
