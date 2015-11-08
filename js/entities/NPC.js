@@ -213,6 +213,12 @@ NPC.prototype.die = function() {
 	var death = new DeathAnimation(this.posX, this.finePosX, this.posY, this.finePosY);
 	game.scene.entities.push(death);
 	sound.play('sounds/Death.ogg');
+	game.scene.inventory.glow();
+	game.scene.gameover++;
+
+	if (game.scene.gameover > 9) {
+		game.scene = new GameOverScene();
+	}
 
 	var ind = game.scene.entities.indexOf(this);
 	if (ind != -1) {

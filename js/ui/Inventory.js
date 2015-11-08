@@ -1,17 +1,25 @@
 function Inventory()
 {
-	this.img = new Sprite( 'img/InventoryBack.png' );
-	this.x = 980;
-	this.y = 420;
-	this.area = new Rect( new V2( this.x, this.y ), new V2( this.x+this.img.width, this.y+this.img.height ));
+	this.img = new Sprite( 'img/seeker_necklace.png' );
+	this.overlay = new Sprite( 'img/seeker_necklace_overlay.png' );
+	this.x = 1120;
+	this.y = 560;
 
-	this.entities = [];
+	this.showTime = 0;
 }
 
 Inventory.prototype.draw = function( ctx ) {
 	this.img.draw(ctx, this.x, this.y);
 
-	for( var i = 0; i < this.entities.length; i++ )
-		if( this.entities[i].draw )
-			this.entities[i].draw( ctx );
+	if (this.showTime > 0)
+		this.overlay.draw(ctx, this.x, this.y);
+};
+
+Inventory.prototype.update = function( delta ) {
+	if (this.showTime > 0)
+		this.showTime -= delta;
+};
+
+Inventory.prototype.glow = function() {
+	this.showTime=2000;
 };

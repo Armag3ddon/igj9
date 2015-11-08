@@ -6,11 +6,7 @@ function MapScene( definition ) {
 
 	this.tileset = new Sprite(String(definition.tilesets[0].image));
 
-	this.player = new Player(10,15);
-
 	this.definition = definition;
-
-	this.entities.push(this.player);
 
 	this.mapOffset = new V2(0,0);
 	this.mapFineOffset = new V2(0,0);
@@ -24,13 +20,22 @@ function MapScene( definition ) {
 	this.cameraThresholdX = 160;
 	this.cameraThresholdY = 90;
 
-	this.calcMapOffset();
-
 	this.renderMap();
 
 	this.initPathfinding();
 
 	this.createNPCs();
+
+	var startpos = this.getRandomTile(1000000);
+	this.player = new Player(startpos.x,startpos.y);
+	this.inventory = new Inventory();
+
+	this.entities.push(this.player);
+	this.entities.push(this.inventory);
+
+	this.calcMapOffset();
+
+	this.gameover = 0;
 };
 
 MapScene.prototype = new Scene;
@@ -170,7 +175,7 @@ MapScene.prototype.createNPCs = function() {
 	this.npcSprites.push(new Sprite('img/character_brown_blue_brown.png'));
 	this.npcSprites.push(new Sprite('img/character_hat_black_beige.png'));
 
-	for (var i = 0; i < 30; i++) {
+	for (var i = 0; i < 50; i++) {
 		var ind = Math.floor((Math.random() * this.npcSprites.length) + 0);
 		var pos = this.getRandomTile();
 		var npc = new NPC(pos.x,pos.y, this.npcSprites[ind]);
