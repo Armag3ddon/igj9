@@ -25,6 +25,8 @@ function NPC(posX, posY, sprite) {
 	this.moveRight = false;
 	this.moveUp = false;
 	this.moveDown = false;
+
+	this.isNPC = true;
 }
 
 NPC.prototype.draw = function ( ctx ) {
@@ -193,4 +195,9 @@ NPC.prototype.getPath = function() {
 
 NPC.prototype.isMoving = function() {
 	return this.moveDown || this.moveUp || this.moveLeft || this.moveRight;
+};
+
+NPC.prototype.kill = function() {
+	var myindex = game.scene.entities.indexOf(this);
+	game.scene.entities.splice(myindex, 1);
 };

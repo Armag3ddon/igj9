@@ -62,6 +62,21 @@ Player.prototype.update = function ( delta ) {
 		this.attackAnimationStep += delta;
 		if (this.attackAnimationStep > this.attackAnimationDuration) {
 			this.attacking = false;
+		} else {
+			var dir = this.attackDirection / this.sizeY;
+			var aX = this.posX;
+			var aY = this.posY;
+			if (dir == 0)
+				aY--;
+			if (dir == 1)
+				aX++;
+			if (dir == 2)
+				aY++;
+			if (dir == 3)
+				aX--;
+			var victim = game.scene.isCharacterOnTile(aX, aY);
+			if (victim)
+				victim.kill();
 		}
 		return;
 	}

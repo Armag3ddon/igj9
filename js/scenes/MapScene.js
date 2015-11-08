@@ -180,3 +180,13 @@ MapScene.prototype.createNPCs = function() {
 	var cultist = new Cultist(10,10);
 	this.entities.push(cultist);
 };
+
+MapScene.prototype.isCharacterOnTile = function(x, y) {
+	for (var i = 0; i < this.entities.length; i++) {
+		if (this.entities[i].isNPC)
+			if (this.entities[i].posX == x)
+				if (this.entities[i].posY == y)
+					return this.entities[i];
+	}
+	return false;
+};
