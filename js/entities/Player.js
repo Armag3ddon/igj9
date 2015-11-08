@@ -24,14 +24,16 @@ function Player(posX, posY) {
 	this.dmg = 1;
 
 	// speed in pixels / second
-	//this.tilesPerSecond = 6;
-	this.tilesPerSecond = 10;	// test
+	this.tilesPerSecond = 6;
 
 	this.moveLeft = false;
 	this.moveRight = false;
 	this.moveUp = false;
 	this.moveDown = false;
 	this.attack = false;
+
+	this.listen = false;
+	this.playListen = false;
 }
 
 Player.prototype.draw = function ( ctx ) {
@@ -89,6 +91,37 @@ Player.prototype.update = function ( delta ) {
 
 	var newX = this.finePosX;
 	var newY = this.finePosY;
+
+	//->
+
+	var enemyTileX = this.posX;
+	var enemyTileY = this.posY;
+
+	this.listen = false;
+
+	var npcList = game.scene.entities;
+	for (ind = 1; ind < npcList.length; ind++) {		
+		var npc = npcList[ind];
+		var npcPosX = npc.posX;
+		var npcPosY = npc.posY;
+		
+		if( ((npcPosX - enemyTileX) <= 1 && (npcPosX - enemyTileX) >= -1) && ((npcPosY - enemyTileY) <= 1 && (npcPosY - enemyTileY) >= -1) ) {
+			if(npc.job == "cultist") {
+				this.listen = true;
+				if(!this.playListen) {
+					this.playListen = true;
+					//play cultist-sound
+				}
+			}			
+		}
+	}
+	if(!this.listen) {
+		this.playListen = false;
+		//stop playing cultist-sound
+		
+	}
+
+	//<-
 
 	if (!this.attack) {	// do not walk while attacking
 		if (this.moveLeft)
