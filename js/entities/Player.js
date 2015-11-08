@@ -110,19 +110,21 @@ Player.prototype.update = function ( delta ) {
 
 
 	var cultist = game.scene.cultist;
-	var d1 = Math.abs(this.posX - cultist.posX);
-	var d2 = Math.abs(this.posY - cultist.posY);
-	var d = d1 + d2;
+	if (cultist) {
+		var d1 = Math.abs(this.posX - cultist.posX);
+		var d2 = Math.abs(this.posY - cultist.posY);
+		var d = d1 + d2;
 
-	if (d < 4) {
-		if (!this.cultistSound)
-			this.cultistSound = sound.play('sounds/Wololo.ogg');
-		else
-			this.cultistSound.play();
-	} else {
-		if (this.cultistSound) {
-			this.cultistSound.pause();
-			this.cultistSound = null;
+		if (d < 4) {
+			if (!this.cultistSound)
+				this.cultistSound = sound.play('sounds/Wololo.ogg');
+			else
+				this.cultistSound.play();
+		} else {
+			if (this.cultistSound) {
+				this.cultistSound.pause();
+				this.cultistSound = null;
+			}
 		}
 	}
 

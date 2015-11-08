@@ -44,8 +44,10 @@ DeathAnimation.prototype.update = function ( delta ) {
 	if (this.animationStep == this.animationDuration-1) {
 		if (this.bloodst != false) {
 			this.bsAnimationStep += delta;
-			if (this.bsAnimationStep > this.bsAnimationDuration)
+			if (this.bsAnimationStep > this.bsAnimationDuration) {
+				game.winCounter++;
 				return game.scene = new CityScene();
+			}
 		} else return;
 	}
 

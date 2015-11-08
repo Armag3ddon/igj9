@@ -24,9 +24,14 @@ Cultist.prototype.die = function() {
 	death.bloodstone();
 	game.scene.entities.push(death);
 	sound.play('sounds/Death2.ogg');
+	if (game.scene.player.cultistSound) {
+		game.scene.player.cultistSound.pause();
+		game.scene.player.cultistSound = null;
+	}
 
 	var ind = game.scene.entities.indexOf(this);
 	if (ind != -1) {
 		game.scene.entities.splice(ind, 1);
 	}
+	game.scene.cultist = null;
 }
