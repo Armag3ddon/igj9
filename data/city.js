@@ -111,8 +111,8 @@ var city = {
 		disHgt: 407
 	},
 	district11: {
-		posX: 503,
-		posY: 156,
+		posX: 440,
+		posY: 67,
 		background: 'District11.png',
 		iconX: 165,
 		iconY: 235,
