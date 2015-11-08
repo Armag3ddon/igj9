@@ -6,8 +6,10 @@ function CityScene() {
 	this.districtSprite = new Sprite('img/sprite_sheet_props.png');
 	this.entities.push(this.districtSprite);
 
-	for (var i = city.districtCount; i >= 1; i--)
+	for (var i = 1; i <= city.districtCount; i++) {
 		this.entities.push( new District( city['district' + i], this.entities ) );
+		console.log("Dis" + i +": Okay");
+	}
 
 	this.entities.push( new LogButton );
 

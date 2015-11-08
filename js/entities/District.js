@@ -30,7 +30,9 @@ District.prototype.draw = function ( ctx ) {
 	if(this.area.inside(mouse)) {
 		var iconArea = new Rect( new V2( offsetX , offsetY ), new V2( offsetX+this.icon.Wdt, offsetY+this.icon.Hgt ));
 		this.img.draw(ctx, this.posX, this.posY);
-	} 
+	} else if(this.definition.background == 'District5.png') {
+		console.log("<--");
+	}
 }
 
 District.prototype.click = function ( pos ) {
@@ -40,21 +42,20 @@ District.prototype.click = function ( pos ) {
 		//this.entities[this.entDis].level = level1;//this.definition.map;
 	
 		switch(this.definition.background) {
-			case 'district1.png':
+			case 'District1.png':
 				game.scene = new MapScene(level1);
 				break;
-			case 'district2.png':
+			case 'District2.png':
 				game.scene = new MapScene(level2);
 				break;
-			case 'district3.png':
+			case 'District3.png':
 				game.scene = new MapScene(level3);
 				break;
-			case 'district4.png':
+			case 'District4.png':
 				game.scene = new MapScene(level4);
 				break;
-			case 'district5.png':
+			case 'District5.png':
 				game.scene = new MapScene(level5);
-				console.log("test");
 				break;
 			default:				
 				break;
