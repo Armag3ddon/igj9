@@ -10,17 +10,17 @@
  </layer>
  <layer name="ebene1" width="40" height="25">
   <data encoding="base64" compression="zlib">
-   eJzNljlOw0AUhsmiWAIqOipuwFIAQYGKkkuwi0VAxQ04AbsgYREFJRUNNbsgAQISS0EOwB3gt/JGfpo82+N4Eb/0acbWLP97M/ZMIdPSUgDDYASEUTf69xC9oE8Y79vyZhp9ZohZ8mbiL51qfGfRu1V6Hkf/CWISTAnj8RhUHDyebbBD7IIlYhmshMzfOvpvEJtgSxiPx6Di4PHcgjviHhwSR+DYwN+okEelS/S/Iq7BjTAej0HFweNZo/EvsvXyOVPnBVRD5s9EegwcHs9P1ql75eQ0Pque88ahTDrZ+YKK+6sF6dhEHt8M2rxqz9xfR8JrZ6Ko1/fX5f07Yv8Q+PTJSRT+9HXT18jWV8odU3+1kD69FIU/tf9OPNpLZ2ZS/uLUf/fXinnaBNp95o9r/+ln2ADOwUGQp1LVh3zO56T+f7q/PPMnnZnq/hdmfb2+I11z8DEPFlhpsxggf3FqDz72QZGVNiUff/0R+eu0HCQ9wMcjKFOp6pWQ98OqYbsxy8FEbve0IHsmiM4sBz813E+b+C6l+NzuvXbbIvZJCRxEvJ+7cu4EURm+KuBJ8Ge6RySd59zxE7+3KH82fzfDhBQ=
-  </data>
- </layer>
- <layer name="ebene2" width="40" height="25">
-  <data encoding="base64" compression="zlib">
-   eJzzYYAAD4bBBdwYydN3n4C8FBBLQmlygALUXRVQWgzJXGKAIAF/+QCxN5TGBSShGBs/CGr+KkaEefcJmEdt4A3F99H4uAChMKEVGCh7R8EoGCkgCIh3DrQjcACQ214D8faBdggWAHJbK5Q9GN13B1h23gXie4yD0318TAwM/EAswIQIx6EACLVfBhqM1pnEA/dBHlaVUPcN1jS3Guo+StMcKf4biLAgxX9DJf+dYBpoF+AHvwa5+2AAAFmsGF0=
+   eJzNljlOw0AUhp1FsQRUdFTcgKUAggIVJZdgF4vYCm7ACdgFCYsoKKloqNkFCRCQWApyAO4Av8UbeTR5tmfiRfzSpxlbs/xv5tkzhYxlFcAAGARLKRdTdaB/J9EFujP1bb5sfybQZ5KYIm+cP1Vp5p1N71boeQT9R4kxMM74k2MQccjxbIFtYgfMEwtgkRnPRGvov05sgE1mPDkGEYcczw24Je7AAXEIjjT8Dfns+wX6XxJX4JoZT45BxCHHs0rjn2ctaxn1p8wfz6Aacv10pMYgI8fznXXrfmtyEp9V33njUCad7Hymkv3VTDo2sI6vGm1elGfZX2vCe6ejqPf3x+P9G2J/Z/gIWJMo/Kn7pu6Ro8+UN7r+aiF9+ikKfyL/jn3ac2dmUv7i1H/314R5mhlaAuaPK//UM6wX52AfyFMp6v0B53NS/z/VX17yx52Z4v4XZn/9viNV0/AxA2al0mHOYP3i1C587IGiVDqUAvz1ROSvzXbhdA8fD6BMpahXQt4Pq5rthm0XHXnd00xyxkSntkuQ6u6nDXyXXHxe916nbRF5UgL7Eedze84bE5XhqwIeGX+6OcLpLOdNkOR7i/Dn8AvYjoa7
   </data>
  </layer>
  <layer name="walkable" width="40" height="25" visible="0">
   <data encoding="base64" compression="zlib">
-   eJztllEKwCAMQ9v7X3q/QzZnXdJGNFDwI5hnLaKbmd/qj/yhRjyROnxcvp4HxdfzszXTnwwuhdyqc47KX9YqWomPnTPz/qjztXuwhOifOh9TO/Cp328V39f/JUM7zB8qH8mHUjSv4p+W3Y+Il8WHmouV+C7xtQDl
+   eJzlllEKACEIRPX+l97/Bdt0Z3SiB0Ef0rwsIjczD0aWnTWirOyo0OH3BwW/VQ3Kb1XPptKfDi+F3Kl97uLBXIWT/Ng5lfdH3e+9BgtE/9T9mNzgp36+U35f/5cObrh/qHykH4ps3sQ/rbsfmVqWH+penOT3AD5EAOo=
+  </data>
+ </layer>
+ <layer name="ebene2" width="40" height="25">
+  <data encoding="base64" compression="zlib">
+   eJzzYYAADyhtx8jAYM/IMODAjUw33CcgLwXEklCaHKAAdVcFlBZDMpcYIEjAXz5A7A2lcQFJKMbGD4Kav4oREpcgc+4TMI/awBuK76PxcQFCYUIrMFD2joJRMFJAEBDvHGhH4AAgt70G4u0D7RAsAOS2Vih7MLrvDrDsvAvE9xgHp/v4mBgY+IFYgAkRjkMBEGq/DDQYrTOJB+6DPKwqoe4brGluNdR9lKY5Uvw3EGFBiv+GSv47wTTQLsAPfg1y98EAAHT6GRs=
   </data>
  </layer>
 </map>

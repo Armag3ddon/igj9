@@ -73,8 +73,8 @@ MapScene.prototype.renderMap = function() {
 			var tY = gHgt * Math.floor(j / this.definition.layers[i].width);
 
 			this.tileset.area(ctx, gX, gY, gWdt, gHgt, tX, tY);
-			ctx.fillStyle = '#00ff00';
-			ctx.strokeRect(tX,tY, gWdt,gHgt);
+//			ctx.fillStyle = '#00ff00';
+//			ctx.strokeRect(tX,tY, gWdt,gHgt);
 		}
 	}
 };
@@ -170,15 +170,36 @@ MapScene.prototype.createNPCs = function() {
 	this.npcSprites.push(new Sprite('img/character_brown_blue_brown.png'));
 	this.npcSprites.push(new Sprite('img/character_hat_black_beige.png'));
 
-	for (var i = 0; i < 5; i++) {
+	for (var i = 0; i < 30; i++) {
 		var ind = Math.min(i, this.npcSprites.length-1);
-		var npc = new NPC(10,10, this.npcSprites[ind]);
+		var pos = this.getRandomTile();
+		var npc = new NPC(pos.x,pos.y, this.npcSprites[ind]);
 		this.entities.push(npc);
 	}
 	
 	// create cultist
-	var cultist = new Cultist(10,10);
-	this.entities.push(cultist);
+	var pos = this.getRandomTile(100000);
+	this.cultist = new Cultist(pos.x,pos.y);
+	this.entities.push(this.cultist);
+};
+
+MapScene.prototype.getRandomTile = function(tries) {
+	if (!tries) tries = 100;
+
+	var tX = 0;
+	var tY = 0;
+	var found = false;
+	for (var i = 0; i < tries; i++) {
+		tX = Math.floor(Math.random() * this.mapWidth);
+		tY = Math.floor(Math.random() * this.mapHeight);
+		if (this.isWalkableTile(tX, tY)) {
+			found = true;
+			break;
+		}
+	}
+	if (found)
+		return { x: tX, y: tY };
+	return { x: 10, y: 10 };
 };
 
 MapScene.prototype.isCharacterOnTile = function(x, y) {

@@ -10,17 +10,17 @@
  </layer>
  <layer name="ebene1" width="30" height="25">
   <data encoding="base64" compression="zlib">
-   eJxLY2JgyMCDM4F4KQPxoBRKpwH1pWPBMDPTiLCXHIDL3vQRau8MIJ6FB88m016QuTNxYJCZp4D4DB58lkR7YekKZO5pHBhk5h8g/ocH/yfC3uVYxEDm/sWBiTGTHEBKvkMHpYSVDEuALe5GwSgYKDCaHhEAVCZ5siOwFw5MqpkgIMmOH1cTgZEBsfHmw4Yfr2UnjMkBILPr8OD77IQxOWADG368hBE/XspInr1MwDqWGQ8eafYCAComgAo=
-  </data>
- </layer>
- <layer name="ebene2" width="30" height="25">
-  <data encoding="base64" compression="zlib">
-   eJxjYGBgEGeAACkoLYbGB4E+JgaygCQUo7NBwBNK+0BpDzQ+JcAbitHZAwmkCNCUAFC4iuKQ80Gi3RhR+djAFRLsBYWrO5TtCTTbixG7ugoc4tQA1UCza3CYv4qG9q4Fmr2OhuYTAowDaPdwBv+pZA7TaPyQDS4PtANGAVWAwmgeoDoY7OXKBGbCbGRAbHsjBdoGPYGDPoRkPi42OWAa1PxfOGhqg6VEqAEARFsY+Q==
+   eJxLY2JgyMCDM4F4KQPxoBRKpwH1pWPBMDPTiLCXHIDL3vQRau8MIJ6FB88GYntG0u0FmTsTBwaZeQqIz+DBZ4G4kAR7YekKZO5pHBhk5h8g/ocH/ycinJdjEQOZ+xcHJsZMcgChfGeHJ/xKcUtRDEiJN3oDbHE3CkbBQIHR9IgAoDLJkx2BvXBgUs0EAUl2/LiaCIwMiI03Hzb8eC07YUwOAJldhwffZyeMyQEb2PDjJYz48VIy6w4mYB3LjAcTYy+++pKW9pJTXxKyFwBb9IIe
   </data>
  </layer>
  <layer name="walkable" width="30" height="25" visible="0">
   <data encoding="base64" compression="zlib">
    eJxjZGBgYCSAyQGEzCQGj9o7au9QsXcUjIJRMApGAX4w0uqFUXtH7aWFvQCB0wDv
+  </data>
+ </layer>
+ <layer name="ebene2" width="30" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYGBgEGeAACkoLYbGB4E+JgaygCQUo7NBwBNK+0BpDzQ+JcAbitHZAwmkCNCUAFC4iuKQ80Gi3RhR+djAFRLsBYWrO5TtCTTbixG7ugoc4tQA1UCza3CYv4qG9q4Fmr2OhuaPgoEB/6lkDtNo2iAbXB5oB4wCqgCF0TxAdTDYy5UJzITZyIDY9kYKtA16Agd9CMl8XGxywDSo+b9w0NQGS4lQAwA0ZBj3
   </data>
  </layer>
 </map>

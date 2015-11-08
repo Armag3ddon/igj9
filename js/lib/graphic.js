@@ -25,7 +25,9 @@ var g = {
 		'img/character_cultist.png',
 		'img/main_character.png',
 		'img/seeker_necklace.png',
-		'img/seeker_necklace_overlay.png'
+		'img/seeker_necklace_overlay.png',
+		'img/death_animation.png',
+		'img/bloodstone_animation.png'
 	],
 
 	add: function( url ) {

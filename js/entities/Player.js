@@ -34,6 +34,8 @@ function Player(posX, posY) {
 
 	this.listen = false;
 	this.playListen = false;
+
+	this.cultistSound = null;
 }
 
 Player.prototype.draw = function ( ctx ) {
@@ -106,34 +108,24 @@ Player.prototype.update = function ( delta ) {
 
 	//->
 
-	var enemyTileX = this.posX;
-	var enemyTileY = this.posY;
 
-	this.listen = false;
+	var cultist = game.scene.cultist;
+	var d1 = Math.abs(this.posX - cultist.posX);
+	var d2 = Math.abs(this.posY - cultist.posY);
+	var d = d1 + d2;
 
-	var npcList = game.scene.entities;
-	for (ind = 1; ind < npcList.length; ind++) {		
-		var npc = npcList[ind];
-		var npcPosX = npc.posX;
-		var npcPosY = npc.posY;
-		
-		if( ((npcPosX - enemyTileX) <= 1 && (npcPosX - enemyTileX) >= -1) && ((npcPosY - enemyTileY) <= 1 && (npcPosY - enemyTileY) >= -1) ) {
-			if(npc.job == "cultist") {
-				this.listen = true;
-				if(!this.playListen) {
-					this.playListen = true;
-					//play cultist-sound
-				}
-			}			
+	if (d < 4) {
+		if (!this.cultistSound)
+			this.cultistSound = sound.play('sounds/Wololo.ogg');
+		else
+			this.cultistSound.play();
+	} else {
+		if (this.cultistSound) {
+			this.cultistSound.pause();
+			this.cultistSound = null;
 		}
 	}
-	if(!this.listen) {
-		this.playListen = false;
-		//stop playing cultist-sound
-		
-	}
 
-	//<-
 	if (this.moveLeft)
 	{
 		if (this.isMovingY())
@@ -162,10 +154,6 @@ Player.prototype.update = function ( delta ) {
 		else
 			newY += speedY;
 	}
-
-		this.walkAnimationStep += delta;
-		if (this.walkAnimationStep > this.walkAnimationDuration)
-			this.walkAnimationStep -= this.walkAnimationDuration;
 
 	if (newX != this.finePosX || newY != this.finePosY)
 	{
@@ -313,6 +301,7 @@ Player.prototype.attack = function() {
 	if (this.attacking) return;
 
 	this.attacking = true;
+	sound.play('sounds/Swing.ogg');
 	this.attackDirection = this.sizeY * 2;
 	if (this.moveRight && !this.isMovingY())
 		this.attackDirection = this.sizeY;
