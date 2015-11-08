@@ -50,8 +50,8 @@ NPC.prototype.draw = function ( ctx ) {
 
 	// draw char sprite
 	this.sprite.area(ctx, gX,gY, 36,72, x-18,y-65);
-	ctx.fillStyle = '#000000';
-	ctx.strokeRect(x,y, 20,20);
+//	ctx.fillStyle = '#000000';
+//	ctx.strokeRect(x,y, 20,20);
 };
 
 NPC.prototype.update = function ( delta ) {

@@ -21,7 +21,6 @@ function DeathAnimation(posX, offX, posY, offY) {
 }
 
 DeathAnimation.prototype.bloodstone = function() {
-	console.log("hi");
 	this.bloodst = true;
 }
 
