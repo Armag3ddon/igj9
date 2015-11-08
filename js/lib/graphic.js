@@ -33,7 +33,9 @@ var g = {
 		'img/seeker_necklace.png',
 		'img/seeker_necklace_overlay.png',
 		'img/death_animation.png',
-		'img/bloodstone_animation.png'
+		'img/bloodstone_animation.png',
+		'img/log_screen.jpg',
+		'img/win_screen.jpg'
 	],
 
 	add: function( url ) {
