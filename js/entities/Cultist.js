@@ -8,14 +8,30 @@ function Cultist(posX, posY) {
 
 Cultist.prototype = new NPC;
 
-Cultist.prototype.die = function() {
-	//NPC.prototype.die();
-	console.log("a cultist died");
-	this.alive = false;
+Cultist.prototype.attacked = function(dmg) {
+	if (!this.alive) return;
 
-	game.scene.entities.splice(0, game.scene.entities.length);
-	
-	// switch scene
-	game.scene = new CityScene();
-	
+	this.health -= dmg;
+	if (this.health <= 0) {
+		this.die();
+	} else {
+		sound.play('sounds/Hurt.ogg');
+	}
+}
+
+Cultist.prototype.die = function() {
+	var death = new DeathAnimation(this.posX, this.finePosX, this.posY, this.finePosY);
+	death.bloodstone();
+	game.scene.entities.push(death);
+	sound.play('sounds/Death2.ogg');
+	if (game.scene.player.cultistSound) {
+		game.scene.player.cultistSound.pause();
+		game.scene.player.cultistSound = null;
+	}
+
+	var ind = game.scene.entities.indexOf(this);
+	if (ind != -1) {
+		game.scene.entities.splice(ind, 1);
+	}
+	game.scene.cultist = null;
 }

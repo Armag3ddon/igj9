@@ -10,6 +10,8 @@ window.requestAnimFrame = (function(){
 var game = {
 	frames: 0,
 	fps: 25,
+	
+	winCounter:0,	// wincounter
 
 	scene: null,
 	lastUpdate: 0,

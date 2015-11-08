@@ -1,5 +1,5 @@
 var config = {
-	fontsize: 30,
-	font: '30px Courier',
-	fontcolor: '#ffffff'
+	fontsize: 20,
+	font: '20px Courier',
+	fontcolor: '#ff0000'
 }

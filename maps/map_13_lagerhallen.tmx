@@ -3,24 +3,24 @@
  <tileset firstgid="1" name="sprite_sheet_props_main" tilewidth="36" tileheight="28">
   <image source="../img/sprite_sheet_props_main.png" width="1800" height="1400"/>
  </tileset>
- <layer name="maps" width="30" height="25">
+ <layer name="map" width="30" height="25">
   <data encoding="base64" compression="zlib">
    eJxbwsDA4ATEE5kw8QVGBoaLQHwJii+i0cjsy4zYzUDGD4FqHgHxYyBegsdeJiBmBmIWKGZGo5HZrATsBGFhIBYBYlEm/PaaALEpEJtBsSkajcw2J8JeZIzPXlriUXsHp711rNgxurrbjBA8UuwdqHAetXdo2kstPGovfqxDBh61d+jYS467hnJ6Hur2AgAmuogL
   </data>
  </layer>
  <layer name="ebene1" width="30" height="25">
   <data encoding="base64" compression="zlib">
-   eJzNlklOwzAUhl+dEDMJCgeADdyAmRuw6qJSrwDlCGzZcAWGVRds2XMFpkLL0ELLARBXoH8kgxLLz9gpSfmlT5aiOJ+HFydE/yeNAhyilL/jK3/FT5bAcoG+OPE+HSm4nOfgfcbevSg6hn1sMf12ZBrfdEtpPnDtkuzrvhASHcg0WbzVhD/2HaKtWfpUDN54LMm0HbxJ9yt4Az3Lu2PyVkLzvXUF5/1mRhDNgrLw83LhvJN4/pRiWjDzNcx92P3dDYj2QB3sB27z9a0r05l6DNcJOAVn4NNhrD7rzOUKrmtwA24D937DerNmVN6+TFNUWqjxNngET1q9L0b+uCZCvUswDia02r+I/ElGWs6sDbg2wRbY1rx36NcE94rmL+0D4/H9DgqMI1CEDu2Y5azwyQqeswrWmFZn/Y+8uSTjP56tVvT0ce97Af+Seuaw7vNgAKNfYnE=
-  </data>
- </layer>
- <layer name="ebene2" width="30" height="25">
-  <data encoding="base64" compression="zlib">
-   eJxjYMAPpKC0GBCLo4mBgAcjAQPQQCWR6n1g5gOxJ5oYCFSRaO9qEtXjAmuoZM4ooA5QoEN8hAJxCBQHQ8WC6GBvOxDfB9rzAIi3E6lHjoU6dgsyMTAIAXErne0dBfQBoLJcbADsBZXlHgNg7yggDrgPUP1GbLuA2oBQu8ANSV4cSRy5DUSLfFSBZK8nkjhyG4gW+WjVaPtmSAAAxngOkA==
+   eJzFljlSwzAUhl9kY4Vl2A4QGrgBOwU9VYrMcAVIGqhpabgCS0VBS88V2AIJewgHYLgC+T0oYGskIcnY/DPfaCax9Gl5UUz0k63SF75ZNfTdNnzX9x57ek1jy2EZ1mebz/wV35kGMwX64sTntCfQ5SQH7wPO7lHwpDjHlqbfGk/jmudSmnd8dkbmfa+ERDs8jY+3lvDHvl2064Y+VYU3nksybQtv0v0COuDV8NtReauh+tm6QOftM8qIxsA4c/Pq7gOddwjjDwtGmGa9ijGznu9GQLQJ6qAR2K3Xta5Ud+o+XAfgEByBD4u5qvbZNedwXYBLcBXY98vq9c1/ebs8TVFpocbb4A7cS/U+Fbljmwj1zkEZDEq1fxq5kww33FmLcC2BZbAiea/RrwluBM1f2luNx/V/kGEegSC0aAcMd4VLZjHOHJjXtDILf+TNJZ7veKZakdPFs28FvEvKmcC+T4Ieqntlyw==
   </data>
  </layer>
  <layer name="walkable" width="30" height="25" visible="0">
   <data encoding="base64" compression="zlib">
-   eJztkjkOACAIBPH/n7ayk8ByiNckVIhjVoh4GlgS2rO3eFdQ9ZYKrzV/779ZdiBiX6K8qDvby/Wyc470zuZQdtqrjBnpjuw5L9/L9zT1vTiveU+lKoPh7cuvAO8=
+   eJxjYEAARihG5xOL8QF8aim1lxS7SXEjJXbSCwyUWwbCXnLDn9J4IycNUCO9UMteUu2mtb245IaSvdj0kQoGU7qihR5CZtBaH6Vg1F7ccsTgUXtJByPN3qEKBioMYPYCABaeAPY=
+  </data>
+ </layer>
+ <layer name="ebene2" width="30" height="25">
+  <data encoding="base64" compression="zlib">
+   eJxjYEAAO0YIRgZSUFoMiMXRxEDAA0m9PZpebKCSCDUg4AMzH4g90cRAoIpIc2BgNYnqcYE1VDJnFFAHKNAhPkKBOASKg6FiQXSwtx2I7wPteQDE24nUI8dCHbsFmRgYhIC4lQJ7iSkPRsHAAFBZLjYA9oLKco8BsHcUEAfcByjPEtsuoDYg1C5wQ5IXRxJHbgPRIh9VINnriSSO3AaiRT5aNVpmDwkAADbFD44=
   </data>
  </layer>
 </map>

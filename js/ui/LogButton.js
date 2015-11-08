@@ -16,9 +16,18 @@ function LogButton()
 	
 	this.amountOfLines = 0;
 
-	this.entities = [ new LogEntry(this, "I'm a test"),
-					new LogEntry(this, "Me too!"),
-					new LogEntry(this, "And I'm a third one asdlkjfgasdljfgsaksjgfaskgfkasjdgfsakjgfs")];
+	this.entities = [ new LogEntry(this, "Tag 1: Das Wettrennen beginnt, dieser Wahnsinn muss          gestoppt werden!"),
+					new LogEntry(this, "Tag 2: Ich konnte die Notiz entschlüsseln, die du dem Kultisten abgenommen hast. Anscheinend versuchen diese Kultisten mit ihren Ritualen ein Portal in der Stadt zu öffnen, um ein uraltes Böses in unsere Welt zu bringen. Dazu scheinen sie wohl mindestens drei Bezirke kontrollieren zu müssen, das müssen wir unbedingt verhindern! Vielleicht hat einer der Kultisten sich ja den Ort notiert."),
+					new LogEntry(this, "Tag 3: 	Super, dass du eine zweite Notiz gefunden hast. Leider konnte ich nur eines der Merkmale für den Bezirk entschlüsseln, in dem das Portal auftauchen wird. Wenn du mir weitere Hinweise bringen kannst, dann finde ich vielleicht heraus, wo das Portal auftauchen wird."),
+					new LogEntry(this, "Tag 4:	Wir kommen der Wahrheit näher! Ich fürchte, wir brauchen aber weitere Hinweise, bevor wir den genauen Ort herausfinden können. Wenn wir wissen, wo das Portal geöffnet werden soll, dann können wir es möglicherweise mit den Blutsteinen der Kultisten versiegeln, bevor die Bedrohung überhaupt entsteht. Beeile dich!"),
+					new LogEntry(this, "Tag 5:	Hmm... ich fürchte, ich brauche noch etwa zwei weitere Hinweise um genau herauszufinden, wo dieses Pack das Portal öffnen will. Wenn es irgendwie geht, bringe mir so schnell wie möglich weitere Notizen."),
+					new LogEntry(this, "Tag 6:	Ich konnte die möglichen Orte schon auf zwei Bezirk eingrenzen. Leider haben wir nicht die Zeit, um in beiden eine ausführliche Suche durchzuführen und gleichzeitig den Kultisten Einhalt zu gebieten. Versuche doch, noch eine weitere Notiz aufzutreiben, dann müssten wir den Ort des Portals haben!"),
+					new LogEntry(this, "Tag 7: 	Wunderbar, wir haben es!  Sie habend das Portal <area> versteckt. Wir müssen das Portal unbedingt versiegeln!")];
+	
+	var lastEntryId = game.winCounter+1;
+	lastEntryId = 6+1;	// test
+	this.entities.splice(lastEntryId, this.entities.length);
+	
 }
 
 LogButton.prototype.open = function() {
@@ -59,7 +68,7 @@ LogButton.prototype.addLog = function(log) {
 
 function LogEntry(logButton, text) {
 	this.logButton = logButton;
-	this.maxLength = 36;
+	this.maxLength = 54;
 	this.margin = 10;
 	var lines = [];
 	var ind = 0;
@@ -76,7 +85,7 @@ function LogEntry(logButton, text) {
 		this.logButton.amountOfLines++;
 	}
 	this.lines = lines;
-	if (this.lines.length) {
+	if (false && this.lines.length) {
 		this.logButton.amountOfLines += this.lines.length;
 	}
 	
@@ -84,8 +93,8 @@ function LogEntry(logButton, text) {
 }
 
 LogEntry.prototype.draw = function( ctx ) {
-	ctx.fillStyle = '#ff0000';
-	ctx.font = '20px Verdana';
+	ctx.fillStyle = config.fontcolor;
+	ctx.font = config.font;
 	for (ind = 0; ind < this.lines.length; ind++) {
 		var line = this.lines[ind];
 		ctx.fillText( line.text, line.position.x, line.position.y + config.fontsize + this.margin);
