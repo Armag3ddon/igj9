@@ -168,7 +168,12 @@ MapScene.prototype.createNPCs = function() {
 	this.npcSprites.push(new Sprite('img/character_hat_black_beige.png'));
 
 	for (var i = 0; i < 5; i++) {
-		var npc = new NPC(10,10, this.npcSprites[0]);
+		var ind = Math.min(i, this.npcSprites.length-1);
+		var npc = new NPC(10,10, this.npcSprites[ind]);
 		this.entities.push(npc);
 	}
+	
+	// create cultist
+	var cultist = new Cultist(10,10);
+	this.entities.push(cultist);
 };
