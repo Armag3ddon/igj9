@@ -28,6 +28,8 @@ function NPC(posX, posY, sprite) {
 	this.moveRight = false;
 	this.moveUp = false;
 	this.moveDown = false;
+
+	this.isNPC = true;
 }
 
 NPC.prototype.draw = function ( ctx ) {
@@ -211,6 +213,7 @@ NPC.prototype.die = function() {
 	this.alive = false;
 	
 	var ind = game.scene.entities.indexOf(this);
+	console.log(this);
 	if (ind != -1) {
 		game.scene.entities.splice(ind, 1);
 	}
