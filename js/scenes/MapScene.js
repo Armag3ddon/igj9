@@ -112,6 +112,9 @@ MapScene.prototype.down = function ( key ) {
 		case 'down': case 'up': case 'left': case 'right':
 			this.player.startMove(key);
 			break;
+		case 'x':
+			this.player.attack();
+			break;
 	}
 };
 

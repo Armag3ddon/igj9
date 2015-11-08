@@ -13,6 +13,12 @@ function Player(posX, posY) {
 	this.walkAnimationDuration = 750;
 	this.walkAnimationStep = 0;
 
+	this.attackAnimationFrames = 4;
+	this.attackAnimationDuration = 250;
+	this.attackAnimationStep = 0;
+	this.attackDirection = 0;
+	this.attacking = false;
+
 	//this.sprite = new Sprite('img/character_black_yellow_blue.png');
 	this.sprite = new Sprite('img/main_character.png');
 
@@ -41,11 +47,26 @@ Player.prototype.draw = function ( ctx ) {
 	if (this.moveLeft && !this.isMovingY())
 		gY = this.sizeY * 3;
 
+	if (this.attacking)
+	{
+		gX = Math.floor(this.attackAnimationStep / (this.attackAnimationDuration / this.attackAnimationFrames)) * this.sizeX;
+		gY = this.sizeY * 4 + this.attackDirection;
+	}
+
 	// draw char sprite
-	this.sprite.area(ctx, gX,gY, this.sizeX,this.sizeY, x-18,y-65);
+	this.sprite.area(ctx, gX,gY, this.sizeX,this.sizeY, x-36,y-100);
 };
 
 Player.prototype.update = function ( delta ) {
+	if (this.attacking) {
+		this.attackAnimationStep += delta;
+		if (this.attackAnimationStep > this.attackAnimationDuration) {
+			this.attacking = false;
+		}
+		return;
+	}
+
+
 	var tilesize = game.scene.getTileSize();
 	var speedX = Math.floor(this.tilesPerSecond * tilesize.wdt * delta / 1000);
 	var speedY = Math.floor(this.tilesPerSecond * tilesize.hgt * delta / 1000);
@@ -222,4 +243,19 @@ Player.prototype.getPos = function() {
 
 Player.prototype.getCamPos = function() {
 	return { x: this.cameraX, y: this.cameraY };
+}
+
+Player.prototype.attack = function() {
+	if (this.attacking) return;
+
+	this.attacking = true;
+	this.attackDirection = this.sizeY * 2;
+	if (this.moveRight && !this.isMovingY())
+		this.attackDirection = this.sizeY;
+	if (this.moveUp)
+		this.attackDirection = 0;
+	if (this.moveLeft && !this.isMovingY())
+		this.attackDirection = this.sizeY * 3;
+
+	this.attackAnimationStep = 0;
 }
