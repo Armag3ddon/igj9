@@ -36,4 +36,4 @@ Neue Seite:
 Tag 7: 	Wunderbar, wir haben es!  Sie habend das Portal <area> versteckt. Wir müssen das Portal unbedingt versiegeln!
 
 *Anzeige* Ich habe <kultistenKillcount> Blutsteine, aber soweit die Informationen der Kultisten stimmen, werde ich 9 brauchen. 
-*Button*  Portal schließen
+*Button*  Portal versiegeln

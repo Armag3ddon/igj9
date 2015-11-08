@@ -190,3 +190,7 @@ MapScene.prototype.isCharacterOnTile = function(x, y) {
 	}
 	return false;
 };
+
+function Amulett(posX, posY) {
+	
+}

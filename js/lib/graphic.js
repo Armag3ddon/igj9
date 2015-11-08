@@ -23,8 +23,9 @@ var g = {
 		'img/main_screen.jpg',
 		'img/map_screen.jpg',
 		'img/character_cultist.png',
-		'img/main_character.png'
-
+		'img/main_character.png',
+		'img/seeker_necklace.png',
+		'img/seeker_necklace_overlay.png'
 	],
 
 	add: function( url ) {

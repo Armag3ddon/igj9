@@ -10,7 +10,8 @@ function CityScene() {
 		this.entities.push( new District( city['district' + i], this.entities ) );
 	}
 
-	this.entities.push( new LogButton );
+	this.logButton = new LogButton;
+	this.entities.push( this.logButton );
 
 	this.entities.push( new districtInfo );
 	
