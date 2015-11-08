@@ -35,5 +35,14 @@ var city = {
 		iconY: 235,
 		iconWidth: 55,
 		iconHeight: 92
+	},
+	district2: {
+		posX: 211,
+		posY: 0,
+		background: 'district5.png',
+		iconX: 165,
+		iconY: 235,
+		iconWidth: 55,
+		iconHeight: 92
 	}
 };
