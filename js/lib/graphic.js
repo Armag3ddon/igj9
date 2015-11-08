@@ -1,8 +1,5 @@
 var g = {
 	urls: [
-		'img/CreditsBack.jpg',
-		'img/BackButton.png',
-		'img/BackButtonHL.png',
 		'img/credits.jpg',
 		'img/button_start.png',
 		'img/button_start_hover.png',
