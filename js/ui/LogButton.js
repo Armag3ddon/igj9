@@ -10,7 +10,6 @@ function LogButton()
 	var popupP1 = new V2(305, 50);
 	var popupP2 = new V2(popupP1.x + 670, popupP1.y + 620);
 	this.popup = new Rect(popupP1, popupP2);
-	console.log(this.popup);
 
 	this.opened = false;
 	
@@ -27,6 +26,10 @@ function LogButton()
 	var lastEntryId = game.winCounter+1;
 	lastEntryId = 6+1;	// test
 	this.entities.splice(lastEntryId, this.entities.length);
+	
+	if (this.entities.length == 7) {
+		this.winButton;
+	}
 	
 }
 
@@ -88,8 +91,6 @@ function LogEntry(logButton, text) {
 	if (false && this.lines.length) {
 		this.logButton.amountOfLines += this.lines.length;
 	}
-	
-	console.log(this);
 }
 
 LogEntry.prototype.draw = function( ctx ) {

@@ -55,6 +55,24 @@ District.prototype.click = function ( pos ) {
 			case 'District5.png':
 				game.scene = new MapScene(level5);
 				break;
+			case 'District6.png':
+				game.scene = new MapScene(level6);
+				break;
+			case 'District7.png':
+				game.scene = new MapScene(level7);
+				break;
+			case 'District8.png':
+				game.scene = new MapScene(level8);
+				break;
+			case 'District9.png':
+				game.scene = new MapScene(level9);
+				break;
+			case 'District10.png':
+				game.scene = new MapScene(level10);
+				break;
+			case 'District11.png':
+				game.scene = new MapScene(level11);
+				break;
 			default:				
 				break;
 		}
