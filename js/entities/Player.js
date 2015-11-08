@@ -6,8 +6,8 @@ function Player(posX, posY) {
 	this.cameraX = 0;
 	this.cameraY = 0;
 
-	this.sizeX = 36;
-	this.sizeY = 72;
+	this.sizeX = 72;
+	this.sizeY = 144;
 
 	this.walkAnimationFrames = 4;
 	this.walkAnimationDuration = 750;
@@ -42,7 +42,7 @@ Player.prototype.draw = function ( ctx ) {
 		gY = this.sizeY * 3;
 
 	// draw char sprite
-	this.sprite.area(ctx, gX,gY, 36,72, x-18,y-65);
+	this.sprite.area(ctx, gX,gY, this.sizeX,this.sizeY, x-18,y-65);
 };
 
 Player.prototype.update = function ( delta ) {
