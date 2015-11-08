@@ -13,7 +13,8 @@ function Player(posX, posY) {
 	this.walkAnimationDuration = 750;
 	this.walkAnimationStep = 0;
 
-	this.sprite = new Sprite('img/character_black_yellow_blue.png');
+	//this.sprite = new Sprite('img/character_black_yellow_blue.png');
+	this.sprite = new Sprite('img/main_character.png');
 
 	// speed in pixels / second
 	this.tilesPerSecond = 6;
